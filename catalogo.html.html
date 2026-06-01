@@ -1,0 +1,4787 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Canecas Dia dos Namorados | Studio Café Caneca</title>
+</head>
+<body style="margin:0; padding:0; overflow-x:hidden;">
+
+<section id="cc-namorados-page">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600;700;800;900&display=swap');
+
+    #cc-namorados-page {
+      --cc-black: #14110f;
+      --cc-brown: #5a3524;
+      --cc-brown-2: #8b5a3c;
+      --cc-cream: #f8efe4;
+      --cc-cream-2: #fffaf4;
+      --cc-gold: #c99a5d;
+      --cc-red: #b6403a;
+      --cc-muted: #76665d;
+      --cc-line: rgba(90, 53, 36, .15);
+      --cc-shadow: 0 22px 65px rgba(20, 17, 15, .12);
+
+      /*
+        FULL BLEED PARA ELEMENTOR:
+        Isso faz a seção escapar da largura limitada do container
+        e ocupar 100% da largura real da tela.
+      */
+      position: relative;
+      left: 50%;
+      right: 50%;
+      width: 100vw;
+      max-width: 100vw;
+      margin-left: -50vw;
+      margin-right: -50vw;
+
+      overflow: hidden;
+      color: var(--cc-black);
+      background:
+        radial-gradient(circle at top left, rgba(201, 154, 93, .24), transparent 34%),
+        radial-gradient(circle at 85% 10%, rgba(182, 64, 58, .14), transparent 30%),
+        linear-gradient(180deg, var(--cc-cream-2), var(--cc-cream));
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    #cc-namorados-page,
+    #cc-namorados-page * {
+      box-sizing: border-box;
+    }
+
+    #cc-namorados-page a {
+      text-decoration: none;
+    }
+
+    #cc-namorados-page .cc-wrap {
+      width: min(1500px, calc(100vw - 56px));
+      margin: 0 auto;
+    }
+
+    #cc-namorados-page .cc-hero {
+      position: relative;
+      padding: 54px 0 34px;
+      min-height: auto;
+    }
+
+    #cc-namorados-page .cc-hero::before {
+      content: "";
+      position: absolute;
+      inset: 18px 24px;
+      z-index: 0;
+      border-radius: 38px;
+      background:
+        radial-gradient(circle at 12% 20%, rgba(201, 154, 93, .24), transparent 30%),
+        radial-gradient(circle at 82% 18%, rgba(182, 64, 58, .13), transparent 32%),
+        linear-gradient(135deg, rgba(255, 250, 244, .78), rgba(248, 239, 228, .58));
+      border: 1px solid rgba(90, 53, 36, .10);
+      pointer-events: none;
+    }
+
+    #cc-namorados-page .cc-hero .cc-wrap {
+      position: relative;
+      z-index: 1;
+    }
+
+    #cc-namorados-page .cc-hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.08fr) minmax(420px, .92fr);
+      align-items: center;
+      gap: 52px;
+    }
+
+    #cc-namorados-page .cc-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin-bottom: 16px;
+      padding: 9px 14px;
+      border: 1px solid rgba(90, 53, 36, .17);
+      border-radius: 999px;
+      background: rgba(255, 250, 244, .76);
+      color: var(--cc-brown);
+      font-size: 12px;
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      backdrop-filter: blur(12px);
+    }
+
+    #cc-namorados-page .cc-kicker span {
+      width: 8px;
+      height: 8px;
+      display: inline-block;
+      border-radius: 999px;
+      background: var(--cc-red);
+      box-shadow: 0 0 0 6px rgba(182, 64, 58, .11);
+    }
+
+    #cc-namorados-page h1 {
+      margin: 0;
+      max-width: 760px;
+      color: var(--cc-black);
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(52px, 6.2vw, 88px);
+      line-height: .88;
+      letter-spacing: .01em;
+      font-weight: 400;
+    }
+
+    #cc-namorados-page .cc-hero-sub {
+      max-width: 650px;
+      margin: 16px 0 0;
+      color: var(--cc-brown);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(22px, 2.4vw, 31px);
+      line-height: 1.08;
+      font-weight: 700;
+    }
+
+    #cc-namorados-page .cc-hero-text {
+      max-width: 600px;
+      margin: 14px 0 0;
+      color: var(--cc-muted);
+      font-size: 15px;
+      line-height: 1.65;
+      font-weight: 500;
+    }
+
+    #cc-namorados-page .cc-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    #cc-namorados-page .cc-btn {
+      appearance: none;
+      border: 0;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      min-height: 48px;
+      padding: 13px 21px;
+      border-radius: 999px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      transition: transform .2s ease, background .2s ease, color .2s ease, box-shadow .2s ease;
+    }
+
+    #cc-namorados-page .cc-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    #cc-namorados-page .cc-btn-primary {
+      background: var(--cc-black);
+      color: #fff;
+      box-shadow: 0 16px 34px rgba(20, 17, 15, .18);
+    }
+
+    #cc-namorados-page .cc-btn-primary:hover {
+      background: var(--cc-brown);
+      color: #fff;
+    }
+
+    #cc-namorados-page .cc-btn-secondary {
+      background: rgba(255, 255, 255, .72);
+      color: var(--cc-brown);
+      border: 1px solid rgba(90, 53, 36, .17);
+    }
+
+    #cc-namorados-page .cc-hero-card {
+      position: relative;
+      border-radius: 30px;
+      padding: 14px;
+      background: rgba(255, 255, 255, .52);
+      border: 1px solid rgba(90, 53, 36, .12);
+      box-shadow: 0 18px 48px rgba(20, 17, 15, .10);
+      backdrop-filter: blur(14px);
+    }
+
+    #cc-namorados-page .cc-hero-mock {
+      position: relative;
+      min-height: 315px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      border-radius: 24px;
+      background:
+        radial-gradient(circle at 30% 18%, rgba(255, 255, 255, .92), transparent 28%),
+        linear-gradient(145deg, rgba(182, 64, 58, .13), rgba(201, 154, 93, .22)),
+        var(--cc-cream);
+    }
+
+    #cc-namorados-page .cc-cup {
+      position: relative;
+      width: min(230px, 68%);
+      aspect-ratio: 1 / 1;
+      border-radius: 42% 42% 48% 48%;
+      background: linear-gradient(110deg, rgba(255,255,255,.98), rgba(255,250,244,.58) 42%, rgba(255,255,255,.98));
+      box-shadow:
+        inset -20px -13px 34px rgba(90, 53, 36, .08),
+        inset 15px 10px 34px rgba(255, 255, 255, .9),
+        0 26px 46px rgba(90, 53, 36, .16);
+    }
+
+    #cc-namorados-page .cc-cup::after {
+      content: "";
+      position: absolute;
+      right: -48px;
+      top: 31%;
+      width: 86px;
+      height: 92px;
+      border: 14px solid rgba(255, 255, 255, .86);
+      border-left: 0;
+      border-radius: 0 70px 70px 0;
+      box-shadow: 12px 18px 30px rgba(90, 53, 36, .10);
+    }
+
+    #cc-namorados-page .cc-cup-print {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 68%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: var(--cc-red);
+    }
+
+    #cc-namorados-page .cc-cup-print strong {
+      display: block;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(34px, 4.2vw, 52px);
+      line-height: .86;
+      letter-spacing: .02em;
+      font-weight: 400;
+    }
+
+    #cc-namorados-page .cc-cup-print small {
+      display: block;
+      margin-top: 8px;
+      color: var(--cc-brown);
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    #cc-namorados-page .cc-stats {
+      position: absolute;
+      left: 14px;
+      right: 14px;
+      bottom: 14px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+    }
+
+    #cc-namorados-page .cc-stat {
+      padding: 11px 8px;
+      border: 1px solid rgba(90, 53, 36, .12);
+      border-radius: 18px;
+      background: rgba(255, 250, 244, .78);
+      text-align: center;
+      backdrop-filter: blur(10px);
+    }
+
+    #cc-namorados-page .cc-stat strong {
+      display: block;
+      color: var(--cc-black);
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 30px;
+      line-height: .9;
+      font-weight: 400;
+    }
+
+    #cc-namorados-page .cc-stat span {
+      display: block;
+      margin-top: 5px;
+      color: var(--cc-muted);
+      font-size: 9px;
+      font-weight: 900;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    #cc-namorados-page .cc-info-strip {
+      padding: 20px 0;
+      border-top: 1px solid rgba(90, 53, 36, .08);
+      border-bottom: 1px solid rgba(90, 53, 36, .08);
+      background: rgba(255, 250, 244, .42);
+    }
+
+    #cc-namorados-page .cc-info-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    #cc-namorados-page .cc-info-card {
+      padding: 16px 18px;
+      border: 1px solid rgba(90, 53, 36, .12);
+      border-radius: 20px;
+      background: rgba(255,255,255,.56);
+      box-shadow: 0 10px 26px rgba(90, 53, 36, .06);
+    }
+
+    #cc-namorados-page .cc-info-card strong {
+      display: block;
+      margin-bottom: 7px;
+      color: var(--cc-black);
+      font-size: 15px;
+      font-weight: 900;
+    }
+
+    #cc-namorados-page .cc-info-card p {
+      margin: 0;
+      color: var(--cc-muted);
+      font-size: 13px;
+      line-height: 1.6;
+      font-weight: 500;
+    }
+
+    #cc-namorados-page .cc-toolbar-section {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      padding: 14px 0;
+      background: rgba(248, 239, 228, .86);
+      border-bottom: 1px solid rgba(90, 53, 36, .11);
+      backdrop-filter: blur(16px);
+    }
+
+    #cc-namorados-page .cc-toolbar {
+      display: grid;
+      grid-template-columns: 1.2fr auto auto;
+      gap: 12px;
+      align-items: center;
+    }
+
+    #cc-namorados-page input,
+    #cc-namorados-page select {
+      width: 100%;
+      min-height: 48px;
+      border: 1px solid rgba(90, 53, 36, .16);
+      border-radius: 999px;
+      outline: none;
+      background: rgba(255, 255, 255, .76);
+      color: var(--cc-black);
+      box-shadow: 0 10px 28px rgba(90, 53, 36, .06);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    #cc-namorados-page input {
+      padding: 0 18px;
+    }
+
+    #cc-namorados-page select {
+      min-width: 190px;
+      padding: 0 40px 0 17px;
+      appearance: none;
+      cursor: pointer;
+    }
+
+    #cc-namorados-page input:focus,
+    #cc-namorados-page select:focus {
+      border-color: rgba(182, 64, 58, .5);
+      box-shadow: 0 0 0 4px rgba(182, 64, 58, .1);
+    }
+
+    #cc-namorados-page .cc-select {
+      position: relative;
+    }
+
+    #cc-namorados-page .cc-select::after {
+      content: "⌄";
+      position: absolute;
+      top: 50%;
+      right: 18px;
+      transform: translateY(-55%);
+      color: var(--cc-brown);
+      font-weight: 900;
+      pointer-events: none;
+    }
+
+    #cc-namorados-page .cc-results {
+      padding: 0 8px;
+      color: var(--cc-brown);
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    #cc-namorados-page .cc-gallery-section {
+      padding: 32px 0 76px;
+    }
+
+    #cc-namorados-page .cc-gallery-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 24px;
+      margin-bottom: 18px;
+    }
+
+    #cc-namorados-page .cc-gallery-head h2 {
+      margin: 0;
+      color: var(--cc-black);
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(38px, 4.6vw, 62px);
+      line-height: .9;
+      font-weight: 400;
+    }
+
+    #cc-namorados-page .cc-gallery-head p {
+      max-width: 560px;
+      margin: 8px 0 0;
+      color: var(--cc-muted);
+      font-size: 14px;
+      line-height: 1.65;
+      font-weight: 500;
+    }
+
+    #cc-namorados-page .cc-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    #cc-namorados-page .cc-card {
+      overflow: hidden;
+      border: 1px solid rgba(90, 53, 36, .12);
+      border-radius: 26px;
+      background: rgba(255, 255, 255, .64);
+      box-shadow: 0 18px 45px rgba(90, 53, 36, .09);
+      transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
+    }
+
+    #cc-namorados-page .cc-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(182, 64, 58, .25);
+      box-shadow: 0 24px 60px rgba(90, 53, 36, .15);
+    }
+
+    #cc-namorados-page .cc-img {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 1 / 1;
+      background:
+        radial-gradient(circle at top, rgba(255,255,255,.95), transparent 40%),
+        linear-gradient(135deg, rgba(201,154,93,.15), rgba(182,64,58,.11));
+    }
+
+    #cc-namorados-page .cc-img img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .35s ease;
+    }
+
+    #cc-namorados-page .cc-card:hover .cc-img img {
+      transform: scale(1.035);
+    }
+
+    #cc-namorados-page .cc-badge {
+      position: absolute;
+      z-index: 2;
+      top: 12px;
+      left: 12px;
+      padding: 8px 10px;
+      border-radius: 999px;
+      background: rgba(20, 17, 15, .82);
+      color: #fff;
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      backdrop-filter: blur(10px);
+    }
+
+    #cc-namorados-page .cc-card-body {
+      padding: 15px;
+    }
+
+    #cc-namorados-page .cc-card-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    #cc-namorados-page .cc-card-title h3 {
+      margin: 0;
+      color: var(--cc-black);
+      font-size: 15px;
+      line-height: 1.2;
+      font-weight: 900;
+    }
+
+    #cc-namorados-page .cc-card-title span {
+      color: var(--cc-red);
+      font-size: 12px;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    #cc-namorados-page .cc-thumbs {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 6px;
+      margin: 12px 0 14px;
+    }
+
+    #cc-namorados-page .cc-thumbs img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      border: 1px solid rgba(90, 53, 36, .11);
+      border-radius: 11px;
+      background: #fff;
+      object-fit: cover;
+    }
+
+    #cc-namorados-page .cc-card-btn {
+      width: 100%;
+      min-height: 42px;
+      border: 0;
+      border-radius: 999px;
+      background: var(--cc-black);
+      color: #fff;
+      cursor: pointer;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 12px;
+      font-weight: 900;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      transition: background .2s ease, transform .2s ease;
+    }
+
+    #cc-namorados-page .cc-card-btn:hover {
+      transform: translateY(-1px);
+      background: var(--cc-brown);
+    }
+
+    #cc-namorados-page .cc-load-area {
+      display: flex;
+      justify-content: center;
+      margin-top: 34px;
+    }
+
+    #cc-namorados-page .cc-empty {
+      display: none;
+      padding: 48px 20px;
+      border: 1px dashed rgba(90, 53, 36, .24);
+      border-radius: 26px;
+      background: rgba(255,255,255,.45);
+      color: var(--cc-muted);
+      text-align: center;
+      font-weight: 600;
+    }
+
+    #cc-namorados-page .cc-empty strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--cc-black);
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 42px;
+      line-height: .95;
+      font-weight: 400;
+    }
+
+    #cc-namorados-page .cc-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 999999;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 22px;
+      background: rgba(20, 17, 15, .72);
+      backdrop-filter: blur(12px);
+    }
+
+    #cc-namorados-page .cc-modal.is-open {
+      display: flex;
+    }
+
+    #cc-namorados-page .cc-modal-box {
+      position: relative;
+      width: min(1040px, 100%);
+      max-height: 92vh;
+      overflow: auto;
+      border: 1px solid rgba(255,255,255,.46);
+      border-radius: 32px;
+      background:
+        radial-gradient(circle at top left, rgba(201, 154, 93, .2), transparent 30%),
+        linear-gradient(180deg, #fffaf4, #f7efe5);
+      box-shadow: 0 30px 100px rgba(0,0,0,.34);
+    }
+
+    #cc-namorados-page .cc-modal-close {
+      position: sticky;
+      top: 16px;
+      z-index: 4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      margin: 16px 16px 0 auto;
+      border: 0;
+      border-radius: 999px;
+      background: rgba(20, 17, 15, .9);
+      color: #fff;
+      font-size: 25px;
+      line-height: 1;
+      cursor: pointer;
+    }
+
+    #cc-namorados-page .cc-modal-content {
+      display: grid;
+      grid-template-columns: 1fr .82fr;
+      gap: 28px;
+      padding: 0 26px 26px;
+    }
+
+    #cc-namorados-page .cc-modal-main {
+      overflow: hidden;
+      border: 1px solid rgba(90, 53, 36, .13);
+      border-radius: 26px;
+      background: #fff;
+      box-shadow: 0 20px 50px rgba(90, 53, 36, .12);
+    }
+
+    #cc-namorados-page .cc-modal-main img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+    }
+
+    #cc-namorados-page .cc-modal-thumbs {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 9px;
+      margin-top: 12px;
+    }
+
+    #cc-namorados-page .cc-modal-thumbs button {
+      overflow: hidden;
+      padding: 0;
+      border: 2px solid transparent;
+      border-radius: 15px;
+      background: #fff;
+      cursor: pointer;
+    }
+
+    #cc-namorados-page .cc-modal-thumbs button.is-active {
+      border-color: var(--cc-red);
+    }
+
+    #cc-namorados-page .cc-modal-thumbs img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+    }
+
+    #cc-namorados-page .cc-modal-info {
+      padding: 8px 2px 0;
+    }
+
+    #cc-namorados-page .cc-modal-info h3 {
+      margin: 0;
+      color: var(--cc-black);
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(46px, 5vw, 76px);
+      line-height: .88;
+      font-weight: 400;
+    }
+
+    #cc-namorados-page .cc-modal-info p {
+      margin: 16px 0 0;
+      color: var(--cc-muted);
+      font-size: 15px;
+      line-height: 1.7;
+      font-weight: 500;
+    }
+
+    #cc-namorados-page .cc-modal-list {
+      display: grid;
+      gap: 10px;
+      margin: 22px 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    #cc-namorados-page .cc-modal-list li {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      color: var(--cc-brown);
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 1.45;
+    }
+
+    #cc-namorados-page .cc-modal-list li::before {
+      content: "♥";
+      color: var(--cc-red);
+      line-height: 1.2;
+    }
+
+    #cc-namorados-page .cc-modal-actions {
+      display: grid;
+      gap: 10px;
+    }
+
+    #cc-namorados-page .cc-whatsapp {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 52px;
+      padding: 14px 18px;
+      border-radius: 999px;
+      background: #1f7a4d;
+      color: #fff;
+      text-align: center;
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      transition: transform .2s ease, background .2s ease;
+    }
+
+    #cc-namorados-page .cc-whatsapp:hover {
+      transform: translateY(-2px);
+      background: #17663f;
+      color: #fff;
+    }
+
+    #cc-namorados-page .cc-note {
+      margin-top: 8px;
+      color: var(--cc-muted);
+      font-size: 12px;
+      line-height: 1.55;
+    }
+
+
+
+    #cc-namorados-page .cc-seller-strip {
+      padding: 20px 0;
+      background:
+        linear-gradient(180deg, rgba(20, 17, 15, .94), rgba(45, 31, 24, .94));
+      color: #fff;
+      border-top: 1px solid rgba(255,255,255,.08);
+      border-bottom: 1px solid rgba(255,255,255,.08);
+    }
+
+    #cc-namorados-page .cc-seller-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 14px;
+    }
+
+    #cc-namorados-page .cc-seller-head h2 {
+      margin: 0;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(30px, 3.4vw, 48px);
+      line-height: .9;
+      font-weight: 400;
+      color: #fff;
+    }
+
+    #cc-namorados-page .cc-seller-head p {
+      margin: 6px 0 0;
+      max-width: 640px;
+      color: rgba(255,255,255,.72);
+      font-size: 13px;
+      line-height: 1.55;
+      font-weight: 500;
+    }
+
+    #cc-namorados-page .cc-seller-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr 1fr 1fr 1fr 170px;
+      gap: 12px;
+      align-items: end;
+    }
+
+    #cc-namorados-page .cc-field {
+      display: grid;
+      gap: 7px;
+    }
+
+    #cc-namorados-page .cc-field label {
+      color: rgba(255,255,255,.72);
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+    }
+
+    #cc-namorados-page .cc-field input,
+    #cc-namorados-page .cc-field select,
+    #cc-namorados-page .cc-field textarea {
+      width: 100%;
+      min-height: 46px;
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: 16px;
+      outline: none;
+      background: rgba(255,255,255,.09);
+      color: #fff;
+      box-shadow: none;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 0 14px;
+    }
+
+    #cc-namorados-page .cc-field textarea {
+      min-height: 88px;
+      padding: 12px 14px;
+      resize: vertical;
+      line-height: 1.5;
+    }
+
+    #cc-namorados-page .cc-field input::placeholder,
+    #cc-namorados-page .cc-field textarea::placeholder {
+      color: rgba(255,255,255,.42);
+    }
+
+    #cc-namorados-page .cc-field select {
+      appearance: auto;
+      cursor: pointer;
+    }
+
+    #cc-namorados-page .cc-field option {
+      color: #14110f;
+      background: #fffaf4;
+    }
+
+    #cc-namorados-page .cc-order-box {
+      margin: 20px 0 18px;
+      padding: 18px;
+      border: 1px solid rgba(90, 53, 36, .13);
+      border-radius: 24px;
+      background: rgba(255,255,255,.52);
+      box-shadow: 0 14px 34px rgba(90, 53, 36, .07);
+    }
+
+    #cc-namorados-page .cc-order-box h4 {
+      margin: 0 0 12px;
+      color: var(--cc-black);
+      font-size: 15px;
+      line-height: 1.2;
+      font-weight: 900;
+    }
+
+    #cc-namorados-page .cc-order-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    #cc-namorados-page .cc-order-grid .cc-field label {
+      color: var(--cc-brown);
+    }
+
+    #cc-namorados-page .cc-order-grid .cc-field input,
+    #cc-namorados-page .cc-order-grid .cc-field select,
+    #cc-namorados-page .cc-order-grid .cc-field textarea {
+      border: 1px solid rgba(90, 53, 36, .16);
+      background: rgba(255,255,255,.72);
+      color: var(--cc-black);
+      border-radius: 16px;
+      box-shadow: none;
+    }
+
+    #cc-namorados-page .cc-order-grid .cc-field input::placeholder,
+    #cc-namorados-page .cc-order-grid .cc-field textarea::placeholder {
+      color: rgba(20,17,15,.38);
+    }
+
+    #cc-namorados-page .cc-field-full {
+      grid-column: 1 / -1;
+    }
+
+    #cc-namorados-page .cc-file-input {
+      padding: 11px 14px !important;
+      height: auto;
+      line-height: 1.25;
+    }
+
+    #cc-namorados-page .cc-photo-preview {
+      display: none;
+      grid-template-columns: 72px 1fr;
+      gap: 12px;
+      align-items: center;
+      margin-top: 10px;
+      padding: 10px;
+      border: 1px dashed rgba(90,53,36,.22);
+      border-radius: 18px;
+      background: rgba(255,255,255,.45);
+    }
+
+    #cc-namorados-page .cc-photo-preview.is-visible {
+      display: grid;
+    }
+
+    #cc-namorados-page .cc-photo-preview img {
+      width: 72px;
+      height: 72px;
+      object-fit: cover;
+      border-radius: 14px;
+      background: #fff;
+      border: 1px solid rgba(90,53,36,.12);
+    }
+
+    #cc-namorados-page .cc-photo-preview strong {
+      display: block;
+      color: var(--cc-black);
+      font-size: 12px;
+      font-weight: 900;
+      line-height: 1.3;
+      word-break: break-word;
+    }
+
+    #cc-namorados-page .cc-photo-preview span {
+      display: block;
+      margin-top: 4px;
+      color: var(--cc-muted);
+      font-size: 11px;
+      line-height: 1.45;
+      font-weight: 600;
+    }
+
+    #cc-namorados-page .cc-alert {
+      display: none;
+      margin-bottom: 12px;
+      padding: 11px 13px;
+      border-radius: 16px;
+      background: rgba(182,64,58,.11);
+      color: var(--cc-red);
+      font-size: 12px;
+      line-height: 1.45;
+      font-weight: 800;
+    }
+
+    #cc-namorados-page .cc-alert.is-visible {
+      display: block;
+    }
+
+    #cc-namorados-page .cc-copy-summary {
+      background: var(--cc-brown);
+      color: #fff;
+    }
+
+    #cc-namorados-page .cc-copy-summary:hover {
+      background: var(--cc-black);
+      color: #fff;
+    }
+
+
+    #cc-namorados-page .cc-submit-order {
+      background: var(--cc-black);
+      color: #fff;
+    }
+
+    #cc-namorados-page .cc-submit-order:hover {
+      background: var(--cc-brown);
+      color: #fff;
+    }
+
+    #cc-namorados-page .cc-submit-order.is-loading {
+      opacity: .72;
+      pointer-events: none;
+    }
+
+    #cc-namorados-page .cc-order-status {
+      display: none;
+      margin-top: 10px;
+      padding: 11px 13px;
+      border-radius: 16px;
+      font-size: 12px;
+      line-height: 1.45;
+      font-weight: 800;
+    }
+
+    #cc-namorados-page .cc-order-status.is-visible {
+      display: block;
+    }
+
+    #cc-namorados-page .cc-order-status.is-success {
+      background: rgba(31, 122, 77, .12);
+      color: #1f7a4d;
+    }
+
+    #cc-namorados-page .cc-order-status.is-error {
+      background: rgba(182, 64, 58, .12);
+      color: var(--cc-red);
+    }
+
+
+    #cc-namorados-page .cc-filter-panel {
+      padding: 18px 0;
+      border-bottom: 1px solid rgba(90, 53, 36, .10);
+      background: rgba(248, 239, 228, .78);
+    }
+
+    #cc-namorados-page .cc-filter-title {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 13px;
+    }
+
+    #cc-namorados-page .cc-filter-title h3 {
+      margin: 0;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(30px, 3vw, 44px);
+      line-height: .9;
+      color: var(--cc-black);
+      font-weight: 400;
+    }
+
+    #cc-namorados-page .cc-filter-title p {
+      margin: 5px 0 0;
+      color: var(--cc-muted);
+      font-size: 12px;
+      line-height: 1.5;
+      font-weight: 600;
+    }
+
+    #cc-namorados-page .cc-filter-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 10px;
+      align-items: end;
+    }
+
+    #cc-namorados-page .cc-filter-grid .cc-field label {
+      color: var(--cc-brown);
+    }
+
+    #cc-namorados-page .cc-filter-grid .cc-field select {
+      border: 1px solid rgba(90,53,36,.16);
+      border-radius: 16px;
+      background: rgba(255,255,255,.74);
+      color: var(--cc-black);
+      box-shadow: none;
+      min-height: 44px;
+      width: 100%;
+    }
+
+    #cc-namorados-page .cc-filter-grid .cc-field option {
+      color: var(--cc-black);
+      background: #fffaf4;
+    }
+
+    #cc-namorados-page .cc-filter-reset {
+      width: 100%;
+      min-height: 44px;
+      padding: 10px 14px;
+      border: 1px solid rgba(90,53,36,.16);
+      border-radius: 16px;
+      background: var(--cc-black);
+      color: #fff;
+      cursor: pointer;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      transition: transform .2s ease, background .2s ease;
+    }
+
+    #cc-namorados-page .cc-filter-reset:hover {
+      transform: translateY(-1px);
+      background: var(--cc-brown);
+    }
+
+    #cc-namorados-page .cc-card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      min-height: 20px;
+      margin: 10px 0 0;
+    }
+
+    #cc-namorados-page .cc-tag-pill {
+      display: inline-flex;
+      align-items: center;
+      min-height: 20px;
+      padding: 5px 7px;
+      border-radius: 999px;
+      background: rgba(90,53,36,.08);
+      color: var(--cc-brown);
+      font-size: 9px;
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+
+    #cc-namorados-page .cc-tag-pill.is-photo {
+      background: rgba(182,64,58,.11);
+      color: var(--cc-red);
+    }
+
+
+    #cc-namorados-page .cc-price-box {
+      margin-top: 14px;
+      padding: 16px;
+      border: 1px solid rgba(90, 53, 36, .14);
+      border-radius: 22px;
+      background:
+        radial-gradient(circle at top right, rgba(199,154,93,.16), transparent 38%),
+        rgba(255,255,255,.56);
+      box-shadow: 0 10px 28px rgba(90,53,36,.06);
+    }
+
+    #cc-namorados-page .cc-price-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 7px 0;
+      border-bottom: 1px solid rgba(90,53,36,.09);
+      color: var(--cc-muted);
+      font-size: 13px;
+      line-height: 1.35;
+      font-weight: 700;
+    }
+
+    #cc-namorados-page .cc-price-row:last-child {
+      border-bottom: 0;
+    }
+
+    #cc-namorados-page .cc-price-row strong {
+      color: var(--cc-black);
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    #cc-namorados-page .cc-total-row {
+      align-items: center;
+      margin-top: 8px;
+      padding-top: 13px;
+      border-top: 2px solid rgba(90,53,36,.16);
+      border-bottom: 0;
+      color: var(--cc-black);
+    }
+
+    #cc-namorados-page .cc-total-row span {
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+
+    #cc-namorados-page .cc-total-row strong {
+      color: var(--cc-red);
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 36px;
+      line-height: .9;
+      font-weight: 400;
+      letter-spacing: .02em;
+    }
+
+    #cc-namorados-page .cc-price-note {
+      margin: 9px 0 0;
+      color: var(--cc-muted);
+      font-size: 11px;
+      line-height: 1.45;
+      font-weight: 600;
+    }
+
+
+    /* Correção: impede que Elementor/navegador/fallback deixe as imagens apagadas ou sem cor */
+    #cc-namorados-page .cc-img img,
+    #cc-namorados-page .cc-thumbs img,
+    #cc-namorados-page .cc-modal-main img,
+    #cc-namorados-page .cc-modal-thumbs img {
+      opacity: 1 !important;
+      filter: none !important;
+      mix-blend-mode: normal !important;
+      -webkit-filter: none !important;
+    }
+
+    #cc-namorados-page .cc-img::after {
+      display: none !important;
+      content: none !important;
+    }
+
+    #cc-namorados-page img.cc-img-error {
+      opacity: .28 !important;
+      filter: grayscale(1) !important;
+    }
+
+
+    #cc-namorados-page .cc-hidden-by-model {
+      display: none !important;
+    }
+
+    #cc-namorados-page .cc-cart-panel {
+      position: fixed;
+      left: 18px;
+      right: auto;
+      bottom: 18px;
+      z-index: 2147483000;
+      width: min(420px, calc(100vw - 28px));
+      border: 1px solid rgba(90,53,36,.16);
+      border-radius: 24px;
+      background: rgba(255,250,244,.96);
+      box-shadow: 0 24px 70px rgba(20,17,15,.22);
+      overflow: hidden;
+      backdrop-filter: blur(16px);
+    }
+
+    #cc-namorados-page .cc-cart-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 14px 16px;
+      background: var(--cc-black);
+      color: #fff;
+    }
+
+    #cc-namorados-page .cc-cart-head strong {
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+    }
+
+    #cc-namorados-page .cc-cart-head span {
+      min-width: 26px;
+      height: 26px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      background: var(--cc-red);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    #cc-namorados-page .cc-cart-body {
+      display: none;
+      padding: 14px;
+    }
+
+    #cc-namorados-page .cc-cart-panel.is-open .cc-cart-body {
+      display: block;
+    }
+
+    #cc-namorados-page .cc-cart-list {
+      display: grid;
+      gap: 8px;
+      max-height: 220px;
+      overflow: auto;
+      margin-bottom: 12px;
+    }
+
+    #cc-namorados-page .cc-cart-item {
+      display: grid;
+      grid-template-columns: 54px 1fr auto;
+      gap: 9px;
+      align-items: center;
+      padding: 8px;
+      border: 1px solid rgba(90,53,36,.10);
+      border-radius: 16px;
+      background: rgba(255,255,255,.68);
+    }
+
+    #cc-namorados-page .cc-cart-item img {
+      width: 54px;
+      height: 54px;
+      object-fit: cover;
+      border-radius: 12px;
+      opacity: 1 !important;
+      filter: none !important;
+    }
+
+    #cc-namorados-page .cc-cart-item strong {
+      display: block;
+      color: var(--cc-black);
+      font-size: 12px;
+      font-weight: 900;
+      line-height: 1.25;
+    }
+
+    #cc-namorados-page .cc-cart-item span {
+      display: block;
+      margin-top: 3px;
+      color: var(--cc-muted);
+      font-size: 11px;
+      font-weight: 700;
+      line-height: 1.25;
+    }
+
+    #cc-namorados-page .cc-cart-remove {
+      width: 28px;
+      height: 28px;
+      border: 0;
+      border-radius: 999px;
+      background: rgba(182,64,58,.12);
+      color: var(--cc-red);
+      cursor: pointer;
+      font-size: 17px;
+      font-weight: 900;
+    }
+
+    #cc-namorados-page .cc-cart-total {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 0;
+      border-top: 1px solid rgba(90,53,36,.14);
+      color: var(--cc-black);
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    #cc-namorados-page .cc-cart-total strong {
+      color: var(--cc-red);
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 30px;
+      line-height: .9;
+      font-weight: 400;
+    }
+
+    #cc-namorados-page .cc-cart-actions {
+      display: grid;
+      gap: 8px;
+    }
+
+    #cc-namorados-page .cc-cart-empty {
+      padding: 12px;
+      border-radius: 16px;
+      background: rgba(90,53,36,.06);
+      color: var(--cc-muted);
+      font-size: 12px;
+      line-height: 1.45;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    #cc-namorados-page .cc-add-cart {
+      background: var(--cc-red);
+      color: #fff;
+    }
+
+    #cc-namorados-page .cc-add-cart:hover {
+      background: var(--cc-brown);
+      color: #fff;
+    }
+
+    @media (max-width: 767px) {
+      #cc-namorados-page .cc-cart-panel {
+        left: 10px;
+        right: auto;
+        bottom: 10px;
+        width: calc(100vw - 20px);
+      }
+    }
+
+
+    #cc-namorados-page .cc-hero-image-card {
+      padding: 0;
+      overflow: hidden;
+      background: rgba(255,255,255,.38);
+      border-radius: 30px;
+    }
+
+    #cc-namorados-page .cc-hero-real-image {
+      display: block;
+      width: 100%;
+      height: 100%;
+      min-height: 315px;
+      border-radius: 30px;
+      object-fit: cover;
+      object-position: center;
+      box-shadow: 0 18px 48px rgba(20, 17, 15, .10);
+    }
+
+    @media (max-width: 767px) {
+      #cc-namorados-page .cc-hero-real-image {
+        min-height: 260px;
+      }
+    }
+
+
+    #cc-namorados-page .cc-hero-image-card,
+    #cc-namorados-page .cc-hero-image-card * {
+      opacity: 1 !important;
+      filter: none !important;
+      -webkit-filter: none !important;
+      mix-blend-mode: normal !important;
+    }
+
+    #cc-namorados-page .cc-hero-image-card::before,
+    #cc-namorados-page .cc-hero-image-card::after,
+    #cc-namorados-page .cc-hero-real-image::before,
+    #cc-namorados-page .cc-hero-real-image::after {
+      display: none !important;
+      content: none !important;
+      opacity: 0 !important;
+    }
+
+    #cc-namorados-page .cc-hero-real-image {
+      opacity: 1 !important;
+      filter: none !important;
+      -webkit-filter: none !important;
+      mix-blend-mode: normal !important;
+      background: transparent !important;
+    }
+
+
+    /* WhatsApp removido para não atravessar a venda do vendedor */
+    #cc-namorados-page #ccWhatsappLink,
+    #cc-namorados-page #ccCartWhatsapp {
+      display: none !important;
+    }
+
+
+    /* UX Upgrade */
+    #cc-namorados-page .cc-toast {
+      position: fixed;
+      left: 50%;
+      bottom: 22px;
+      z-index: 2147483001;
+      transform: translateX(-50%) translateY(18px);
+      max-width: min(520px, calc(100vw - 28px));
+      padding: 13px 18px;
+      border-radius: 999px;
+      background: rgba(20,17,15,.94);
+      color: #fff;
+      box-shadow: 0 18px 48px rgba(20,17,15,.24);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .22s ease, transform .22s ease;
+      font-size: 12px;
+      line-height: 1.4;
+      font-weight: 900;
+      letter-spacing: .03em;
+      text-align: center;
+    }
+
+    #cc-namorados-page .cc-toast.is-visible {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    #cc-namorados-page .cc-helper-text {
+      margin-top: 6px;
+      color: var(--cc-muted);
+      font-size: 11px;
+      line-height: 1.4;
+      font-weight: 600;
+    }
+
+    #cc-namorados-page .cc-cart-panel {
+      transition: transform .22s ease, box-shadow .22s ease;
+    }
+
+    #cc-namorados-page .cc-cart-panel:not(.is-open) {
+      width: auto;
+      min-width: 240px;
+    }
+
+    #cc-namorados-page .cc-cart-panel:not(.is-open) .cc-cart-head {
+      cursor: pointer;
+      border-radius: 24px;
+    }
+
+    #cc-namorados-page .cc-cart-panel.is-open {
+      width: min(460px, calc(100vw - 28px));
+    }
+
+    #cc-namorados-page .cc-cart-head small {
+      display: block;
+      margin-top: 2px;
+      color: rgba(255,255,255,.62);
+      font-size: 10px;
+      line-height: 1.1;
+      font-weight: 700;
+      letter-spacing: 0;
+      text-transform: none;
+    }
+
+    #cc-namorados-page .cc-cart-actions {
+      grid-template-columns: 1fr;
+    }
+
+    #cc-namorados-page .cc-cart-actions .cc-btn {
+      width: 100%;
+      min-height: 44px;
+      font-size: 11px;
+    }
+
+    #cc-namorados-page .cc-cart-email {
+      background: var(--cc-black);
+      color: #fff;
+    }
+
+    #cc-namorados-page .cc-cart-email:hover {
+      background: var(--cc-brown);
+      color: #fff;
+    }
+
+    #cc-namorados-page .cc-cart-pdf {
+      background: rgba(255,255,255,.76);
+      color: var(--cc-brown);
+      border: 1px solid rgba(90,53,36,.16);
+    }
+
+    #cc-namorados-page .cc-cart-pdf:hover {
+      background: var(--cc-black);
+      color: #fff;
+    }
+
+    #cc-namorados-page .cc-cart-note {
+      margin: 8px 0 0;
+      color: var(--cc-muted);
+      font-size: 11px;
+      line-height: 1.4;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    #cc-namorados-page .cc-modal-actions .cc-btn {
+      width: 100%;
+    }
+
+    #cc-namorados-page .cc-add-cart {
+      min-height: 54px;
+      font-size: 13px;
+    }
+
+    #cc-namorados-page .cc-order-box {
+      scroll-margin-top: 20px;
+    }
+
+    #cc-namorados-page .cc-card-btn::after {
+      content: " →";
+    }
+
+
+    #cc-namorados-page .cc-bump-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 2147483002;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 18px;
+      background: rgba(20,17,15,.62);
+      backdrop-filter: blur(10px);
+    }
+
+    #cc-namorados-page .cc-bump-overlay.is-open {
+      display: flex;
+    }
+
+    #cc-namorados-page .cc-bump-box {
+      width: min(860px, 100%);
+      max-height: 92vh;
+      overflow: auto;
+      border: 1px solid rgba(255,255,255,.34);
+      border-radius: 30px;
+      background:
+        radial-gradient(circle at top left, rgba(201,154,93,.22), transparent 32%),
+        linear-gradient(180deg, #fffaf4, #f7efe5);
+      box-shadow: 0 30px 100px rgba(0,0,0,.34);
+      padding: 24px;
+    }
+
+    #cc-namorados-page .cc-bump-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+
+    #cc-namorados-page .cc-bump-head h3 {
+      margin: 0;
+      color: var(--cc-black);
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(38px, 4.4vw, 62px);
+      line-height: .9;
+      font-weight: 400;
+    }
+
+    #cc-namorados-page .cc-bump-head p {
+      max-width: 620px;
+      margin: 8px 0 0;
+      color: var(--cc-muted);
+      font-size: 14px;
+      line-height: 1.6;
+      font-weight: 600;
+    }
+
+    #cc-namorados-page .cc-bump-close {
+      width: 42px;
+      height: 42px;
+      border: 0;
+      border-radius: 999px;
+      background: var(--cc-black);
+      color: #fff;
+      cursor: pointer;
+      font-size: 24px;
+      line-height: 1;
+      flex: 0 0 auto;
+    }
+
+    #cc-namorados-page .cc-bump-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin: 16px 0;
+    }
+
+    #cc-namorados-page .cc-bump-card {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(90,53,36,.14);
+      border-radius: 24px;
+      background: rgba(255,255,255,.68);
+      box-shadow: 0 14px 34px rgba(90,53,36,.08);
+      padding: 18px;
+      cursor: pointer;
+      transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+    }
+
+    #cc-namorados-page .cc-bump-card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(182,64,58,.28);
+      box-shadow: 0 18px 42px rgba(90,53,36,.12);
+    }
+
+    #cc-namorados-page .cc-bump-card.is-selected {
+      border-color: rgba(182,64,58,.55);
+      box-shadow: 0 0 0 4px rgba(182,64,58,.10), 0 18px 42px rgba(90,53,36,.12);
+    }
+
+    #cc-namorados-page .cc-bump-visual {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 62px;
+      height: 62px;
+      margin-bottom: 12px;
+      border-radius: 20px;
+      background:
+        radial-gradient(circle at top, rgba(255,255,255,.9), transparent 45%),
+        rgba(182,64,58,.10);
+      color: var(--cc-red);
+      font-size: 30px;
+    }
+
+    #cc-namorados-page .cc-bump-card h4 {
+      margin: 0;
+      color: var(--cc-black);
+      font-size: 16px;
+      line-height: 1.25;
+      font-weight: 900;
+    }
+
+    #cc-namorados-page .cc-bump-card p {
+      margin: 8px 0 0;
+      color: var(--cc-muted);
+      font-size: 13px;
+      line-height: 1.5;
+      font-weight: 600;
+    }
+
+    #cc-namorados-page .cc-bump-price {
+      display: inline-flex;
+      margin-top: 12px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: rgba(20,17,15,.08);
+      color: var(--cc-brown);
+      font-size: 11px;
+      line-height: 1;
+      font-weight: 900;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+
+    #cc-namorados-page .cc-bump-delivery {
+      margin: 16px 0 0;
+      padding: 14px 16px;
+      border: 1px solid rgba(201,154,93,.26);
+      border-radius: 20px;
+      background: rgba(201,154,93,.10);
+      color: var(--cc-brown);
+      font-size: 13px;
+      line-height: 1.55;
+      font-weight: 700;
+    }
+
+    #cc-namorados-page .cc-bump-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    #cc-namorados-page .cc-bump-actions .cc-btn {
+      width: 100%;
+    }
+
+    @media (max-width: 767px) {
+      #cc-namorados-page .cc-bump-box {
+        padding: 18px;
+        border-radius: 24px;
+      }
+
+      #cc-namorados-page .cc-bump-head {
+        display: grid;
+        grid-template-columns: 1fr auto;
+      }
+
+      #cc-namorados-page .cc-bump-grid,
+      #cc-namorados-page .cc-bump-actions {
+        grid-template-columns: 1fr;
+      }
+    }
+
+
+    #cc-namorados-page .cc-delivery-box {
+      margin-top: 14px;
+      padding: 14px;
+      border: 1px solid rgba(90,53,36,.14);
+      border-radius: 20px;
+      background: rgba(255,255,255,.52);
+    }
+
+    #cc-namorados-page .cc-delivery-box.is-hidden {
+      display: none;
+    }
+
+    #cc-namorados-page .cc-delivery-grid {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 10px;
+      align-items: end;
+    }
+
+    #cc-namorados-page .cc-delivery-calc {
+      min-height: 46px;
+      padding: 10px 14px;
+      border: 0;
+      border-radius: 16px;
+      background: var(--cc-black);
+      color: #fff;
+      cursor: pointer;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    #cc-namorados-page .cc-delivery-result {
+      margin-top: 10px;
+      padding: 10px 12px;
+      border-radius: 16px;
+      background: rgba(201,154,93,.12);
+      color: var(--cc-brown);
+      font-size: 12px;
+      line-height: 1.45;
+      font-weight: 800;
+    }
+
+    #cc-namorados-page .cc-delivery-result strong {
+      color: var(--cc-red);
+    }
+
+    #cc-namorados-page .cc-delivery-manual {
+      margin-top: 10px;
+    }
+
+    #cc-namorados-page .cc-delivery-manual label {
+      color: var(--cc-brown);
+    }
+
+    #cc-namorados-page .cc-price-row.is-delivery span {
+      color: var(--cc-brown);
+    }
+
+    #cc-namorados-page .cc-seller-benefit-box {
+      margin-top: 10px;
+      padding: 10px 12px;
+      border-radius: 16px;
+      background: rgba(31,122,77,.10);
+      color: #1f7a4d;
+      font-size: 12px;
+      line-height: 1.45;
+      font-weight: 800;
+    }
+
+    @media (max-width: 767px) {
+      #cc-namorados-page .cc-delivery-grid {
+        grid-template-columns: 1fr;
+      }
+
+      #cc-namorados-page .cc-delivery-calc {
+        width: 100%;
+      }
+    }
+
+
+    #cc-namorados-page .cc-seller-code-box {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 8px;
+      align-items: end;
+    }
+
+    #cc-namorados-page .cc-validate-seller {
+      min-height: 46px;
+      padding: 10px 14px;
+      border: 1px solid rgba(255,255,255,.18);
+      border-radius: 16px;
+      background: #fffaf4;
+      color: var(--cc-black);
+      cursor: pointer;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    #cc-namorados-page .cc-seller-status {
+      grid-column: 1 / -1;
+      display: none;
+      margin-top: 2px;
+      padding: 10px 12px;
+      border-radius: 16px;
+      font-size: 12px;
+      line-height: 1.45;
+      font-weight: 800;
+    }
+
+    #cc-namorados-page .cc-seller-status.is-visible {
+      display: block;
+    }
+
+    #cc-namorados-page .cc-seller-status.is-ok {
+      background: rgba(31,122,77,.14);
+      color: #7ff0b3;
+      border: 1px solid rgba(127,240,179,.20);
+    }
+
+    #cc-namorados-page .cc-seller-status.is-error {
+      background: rgba(182,64,58,.16);
+      color: #ffb2aa;
+      border: 1px solid rgba(255,178,170,.20);
+    }
+
+    #cc-namorados-page .cc-seller-benefit-box.is-locked {
+      background: rgba(20,17,15,.06);
+      color: var(--cc-muted);
+    }
+
+    #cc-namorados-page .cc-delivery-manual.cc-benefit-control {
+      display: none;
+    }
+
+    @media (max-width: 767px) {
+      #cc-namorados-page .cc-seller-code-box {
+        grid-template-columns: 1fr;
+      }
+
+      #cc-namorados-page .cc-validate-seller {
+        width: 100%;
+      }
+    }
+
+
+    #cc-namorados-page .cc-consult-delivery {
+      display: none;
+      margin-top: 10px;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: #1f7a4d;
+      color: #fff;
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    #cc-namorados-page .cc-consult-delivery.is-visible {
+      display: inline-flex;
+    }
+
+    #cc-namorados-page .cc-coupon-box {
+      margin-top: 14px;
+      padding: 14px;
+      border: 1px solid rgba(90,53,36,.14);
+      border-radius: 20px;
+      background: rgba(255,255,255,.52);
+    }
+
+    #cc-namorados-page .cc-coupon-grid {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 10px;
+      align-items: end;
+    }
+
+    #cc-namorados-page .cc-apply-coupon {
+      min-height: 46px;
+      padding: 10px 14px;
+      border: 0;
+      border-radius: 16px;
+      background: var(--cc-black);
+      color: #fff;
+      cursor: pointer;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    #cc-namorados-page .cc-coupon-result {
+      margin-top: 10px;
+      padding: 10px 12px;
+      border-radius: 16px;
+      background: rgba(90,53,36,.07);
+      color: var(--cc-brown);
+      font-size: 12px;
+      line-height: 1.45;
+      font-weight: 800;
+    }
+
+    #cc-namorados-page .cc-coupon-result.is-ok {
+      background: rgba(31,122,77,.11);
+      color: #1f7a4d;
+    }
+
+    #cc-namorados-page .cc-coupon-result.is-error {
+      background: rgba(182,64,58,.11);
+      color: var(--cc-red);
+    }
+
+    #cc-namorados-page .cc-price-row.is-discount span,
+    #cc-namorados-page .cc-price-row.is-commission span {
+      color: var(--cc-brown);
+    }
+
+    #cc-namorados-page .cc-price-row.is-discount strong {
+      color: #1f7a4d;
+    }
+
+    #cc-namorados-page .cc-price-row.is-commission strong {
+      color: var(--cc-brown);
+    }
+
+    @media (max-width: 767px) {
+      #cc-namorados-page .cc-coupon-grid {
+        grid-template-columns: 1fr;
+      }
+
+      #cc-namorados-page .cc-apply-coupon {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 1280px) {
+      #cc-namorados-page .cc-wrap {
+        width: min(1180px, calc(100vw - 40px));
+      }
+
+      #cc-namorados-page .cc-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      #cc-namorados-page .cc-hero-grid {
+        grid-template-columns: minmax(0, 1.15fr) minmax(320px, .85fr);
+        gap: 34px;
+      }
+    }
+
+    @media (max-width: 1024px) {
+      #cc-namorados-page .cc-hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      #cc-namorados-page .cc-hero-card {
+        max-width: 620px;
+      }
+
+      #cc-namorados-page .cc-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      #cc-namorados-page .cc-seller-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      #cc-namorados-page .cc-filter-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 767px) {
+      #cc-namorados-page .cc-wrap {
+        width: min(100vw - 28px, 1180px);
+      }
+
+      #cc-namorados-page .cc-hero {
+        padding: 38px 0 26px;
+      }
+
+      #cc-namorados-page .cc-hero::before {
+        inset: 10px 10px;
+        border-radius: 28px;
+      }
+
+      #cc-namorados-page h1 {
+        font-size: clamp(48px, 15vw, 68px);
+      }
+
+      #cc-namorados-page .cc-hero-sub {
+        font-size: 24px;
+      }
+
+      #cc-namorados-page .cc-hero-text {
+        font-size: 14px;
+      }
+
+      #cc-namorados-page .cc-actions {
+        display: grid;
+      }
+
+      #cc-namorados-page .cc-btn {
+        width: 100%;
+      }
+
+      #cc-namorados-page .cc-hero-mock {
+        min-height: 260px;
+      }
+
+      #cc-namorados-page .cc-stats {
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+        gap: 7px;
+      }
+
+      #cc-namorados-page .cc-stat {
+        padding: 10px 6px;
+        border-radius: 15px;
+      }
+
+      #cc-namorados-page .cc-stat strong {
+        font-size: 27px;
+      }
+
+      #cc-namorados-page .cc-stat span {
+        font-size: 8px;
+      }
+
+      #cc-namorados-page .cc-info-grid {
+        grid-template-columns: 1fr;
+      }
+
+      #cc-namorados-page .cc-seller-head {
+        display: block;
+      }
+
+      #cc-namorados-page .cc-seller-grid,
+      #cc-namorados-page .cc-order-grid,
+      #cc-namorados-page .cc-filter-grid {
+        grid-template-columns: 1fr;
+      }
+
+      #cc-namorados-page .cc-seller-strip {
+        padding: 18px 0;
+      }
+
+      #cc-namorados-page .cc-toolbar-section {
+        position: relative;
+        top: auto;
+      }
+
+      #cc-namorados-page .cc-toolbar {
+        grid-template-columns: 1fr;
+      }
+
+      #cc-namorados-page .cc-results {
+        text-align: center;
+        white-space: normal;
+      }
+
+      #cc-namorados-page .cc-gallery-head {
+        display: block;
+      }
+
+      #cc-namorados-page .cc-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+      }
+
+      #cc-namorados-page .cc-card {
+        border-radius: 20px;
+      }
+
+      #cc-namorados-page .cc-card-body {
+        padding: 11px;
+      }
+
+      #cc-namorados-page .cc-card-title {
+        display: block;
+      }
+
+      #cc-namorados-page .cc-card-title h3 {
+        font-size: 13px;
+      }
+
+      #cc-namorados-page .cc-card-title span {
+        display: block;
+        margin-top: 4px;
+        font-size: 11px;
+      }
+
+      #cc-namorados-page .cc-thumbs {
+        gap: 4px;
+      }
+
+      #cc-namorados-page .cc-thumbs img {
+        border-radius: 8px;
+      }
+
+      #cc-namorados-page .cc-card-btn {
+        min-height: 39px;
+        font-size: 10px;
+      }
+
+      #cc-namorados-page .cc-modal {
+        padding: 12px;
+      }
+
+      #cc-namorados-page .cc-modal-box {
+        border-radius: 24px;
+      }
+
+      #cc-namorados-page .cc-modal-content {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        padding: 0 14px 18px;
+      }
+
+      #cc-namorados-page .cc-modal-info h3 {
+        font-size: 52px;
+      }
+
+      #cc-namorados-page .cc-modal-info p {
+        font-size: 14px;
+      }
+    }
+
+    @media (max-width: 420px) {
+      #cc-namorados-page .cc-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+
+  <div class="cc-hero">
+    <div class="cc-wrap">
+      <div class="cc-hero-grid">
+        <div>
+          <div class="cc-kicker"><span></span> Coleção especial</div>
+
+          <h1>Canecas para o Dia dos Namorados</h1>
+
+          <div class="cc-hero-sub">
+            Escolha o modelo ideal para transformar uma lembrança simples em um presente afetivo.
+          </div>
+
+          <p class="cc-hero-text">
+            Veja os modelos disponíveis da coleção de Dia dos Namorados. Cada modelo possui quatro imagens de referência para facilitar sua escolha antes de fazer o pedido.
+          </p>
+
+          <div class="cc-actions">
+            <a href="#cc-galeria-namorados" class="cc-btn cc-btn-primary">Ver modelos disponíveis</a>
+            <a href="#cc-como-funciona" class="cc-btn cc-btn-secondary">Como escolher</a>
+          </div>
+        </div>
+
+        <div class="cc-hero-card cc-hero-image-card">
+          <img
+            src="https://solrevops.github.io/cafe-caneca-namorados/Assets/hero-namorados-cafe-caneca.png.png?v=8"
+            alt="Coleção Dia dos Namorados Studio Café Caneca"
+            class="cc-hero-real-image"
+            loading="eager"
+            onload="this.classList.remove('cc-img-error'); this.style.opacity='1'; this.style.filter='none';"
+          >
+        </div>
+      </div>
+
+      <div id="cc-como-funciona"></div>
+    </div>
+  </div>
+
+
+  <div class="cc-seller-strip">
+    <div class="cc-wrap">
+      <div class="cc-seller-head">
+        <div>
+          <h2>Dados do atendimento</h2>
+          <p>
+            Preencha antes de escolher o modelo. Essas informações entram automaticamente no resumo do pedido para envio no WhatsApp.
+          </p>
+        </div>
+      </div>
+
+      <div class="cc-seller-grid">
+        <div class="cc-field">
+          <label for="ccSellerName">Vendedor</label>
+          <input id="ccSellerName" type="text" placeholder="Nome do vendedor">
+        </div>
+
+        <div class="cc-field">
+          <label for="ccSellerCode">Código do vendedor</label>
+          <div class="cc-seller-code-box">
+            <input id="ccSellerCode" type="text" placeholder="Ex: ROBSON" autocomplete="off">
+            <button id="ccValidateSeller" class="cc-validate-seller" type="button">Validar</button>
+          </div>
+          <div id="ccSellerStatus" class="cc-seller-status">Vendedor ainda não validado.</div>
+        </div>
+
+        <div class="cc-field">
+          <label for="ccCustomerName">Cliente</label>
+          <input id="ccCustomerName" type="text" placeholder="Nome do cliente">
+        </div>
+
+        <div class="cc-field">
+          <label for="ccCustomerPhone">WhatsApp do cliente</label>
+          <input id="ccCustomerPhone" type="tel" placeholder="Ex: 47 99999-9999">
+        </div>
+
+        <div class="cc-field">
+          <label for="ccCustomerEmail">E-mail do cliente</label>
+          <input id="ccCustomerEmail" type="email" placeholder="cliente@email.com">
+        </div>
+
+        <div class="cc-field">
+          <label for="ccDeliveryDate">Entrega</label>
+          <input id="ccDeliveryDate" type="date">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cc-info-strip">
+    <div class="cc-wrap">
+      <div class="cc-info-grid">
+        <div class="cc-info-card">
+          <strong>1. Encontre seu modelo</strong>
+          <p>Use a busca para encontrar pelo número ou navegue pela coleção completa.</p>
+        </div>
+
+        <div class="cc-info-card">
+          <strong>2. Veja as imagens</strong>
+          <p>Cada modelo tem quatro imagens para você visualizar melhor a arte da caneca.</p>
+        </div>
+
+        <div class="cc-info-card">
+          <strong>3. Envie pelo WhatsApp</strong>
+          <p>Clique no botão do modelo escolhido e envie o código para agilizar o atendimento.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="cc-filter-panel">
+    <div class="cc-wrap">
+      <div class="cc-filter-title">
+        <div>
+          <h3>Filtrar modelos</h3>
+          <p>Encontre rápido os modelos certos para o cliente: com foto, formato, cor predominante e perfil.</p>
+        </div>
+      </div>
+
+      <div class="cc-filter-grid">
+        <div class="cc-field">
+          <label for="ccFilterPhoto">Foto</label>
+          <select id="ccFilterPhoto">
+            <option value="">Todos</option>
+            <option value="sim">Com foto</option>
+            <option value="nao">Sem foto</option>
+          </select>
+        </div>
+
+        <div class="cc-field">
+          <label for="ccFilterShape">Formato da foto</label>
+          <select id="ccFilterShape">
+            <option value="">Todos</option>
+            <option value="nenhum">Sem espaço de foto</option>
+            <option value="coracao">Coração</option>
+            <option value="circulo">Círculo</option>
+            <option value="quadrado">Quadrado</option>
+            <option value="retangulo">Retângulo</option>
+            <option value="polaroid">Polaroid</option>
+            <option value="outro">Outro</option>
+          </select>
+        </div>
+
+        <div class="cc-field">
+          <label for="ccFilterColor">Cor predominante</label>
+          <select id="ccFilterColor">
+            <option value="">Todas</option>
+            <option value="branco">Branco</option>
+            <option value="preto">Preto</option>
+            <option value="rosa">Rosa</option>
+            <option value="vermelho">Vermelho</option>
+            <option value="bege">Bege</option>
+            <option value="azul">Azul</option>
+            <option value="marrom">Marrom</option>
+            <option value="colorido">Colorido</option>
+            <option value="outro">Outro</option>
+          </select>
+        </div>
+
+        <div class="cc-field">
+          <label for="ccFilterAudience">Perfil</label>
+          <select id="ccFilterAudience">
+            <option value="">Todos</option>
+            <option value="feminino">Feminino</option>
+            <option value="masculino">Masculino</option>
+            <option value="casal">Casal</option>
+            <option value="neutro">Neutro</option>
+          </select>
+        </div>
+
+        <div class="cc-field">
+          <label>&nbsp;</label>
+          <button id="ccClearFilters" class="cc-filter-reset" type="button">Limpar filtros</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cc-toolbar-section">
+    <div class="cc-wrap">
+      <div class="cc-toolbar">
+        <div>
+          <input id="ccSearchInput" type="search" placeholder="Buscar por número do modelo. Ex: 001, 015, 120..." autocomplete="off">
+        </div>
+
+        <div class="cc-select">
+          <select id="ccSortSelect">
+            <option value="asc">Ordem crescente</option>
+            <option value="desc">Ordem decrescente</option>
+          </select>
+        </div>
+
+        <div class="cc-results" id="ccResultsInfo">
+          Carregando modelos...
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="cc-galeria-namorados" class="cc-gallery-section">
+    <div class="cc-wrap">
+      <div class="cc-gallery-head">
+        <div>
+          <h2>Modelos disponíveis</h2>
+          <p>
+            Clique em qualquer modelo para ampliar as imagens, preencher os dados e inserir no carrinho.
+          </p>
+        </div>
+      </div>
+
+      <div id="ccGrid" class="cc-grid"></div>
+
+      <div id="ccEmpty" class="cc-empty">
+        <strong>Nenhum modelo encontrado</strong>
+        Tente buscar pelo número do modelo, como 001, 027, 135 ou 278.
+      </div>
+
+      <div class="cc-load-area">
+        <button id="ccLoadMore" class="cc-btn cc-btn-secondary" type="button">
+          Carregar mais modelos
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div id="ccModal" class="cc-modal" aria-hidden="true">
+    <div class="cc-modal-box" role="dialog" aria-modal="true">
+      <button class="cc-modal-close" id="ccModalClose" type="button" aria-label="Fechar">×</button>
+
+      <div class="cc-modal-content">
+        <div>
+          <div class="cc-modal-main">
+            <img id="ccModalMainImage" src="" alt="">
+          </div>
+
+          <div id="ccModalThumbs" class="cc-modal-thumbs"></div>
+        </div>
+
+        <div class="cc-modal-info">
+          <div class="cc-kicker"><span></span> Dia dos Namorados</div>
+
+          <h3 id="ccModalTitle">Modelo 001</h3>
+
+          <p>
+            Esse é um modelo da coleção especial de Dia dos Namorados. Registre os dados do pedido para confirmar disponibilidade, personalização e prazo de produção.
+          </p>
+
+          <ul class="cc-modal-list">
+            <li>Modelo com quatro imagens de referência.</li>
+            <li>Ideal para presente personalizado de Dia dos Namorados.</li>
+            <li>Confira o código exato para facilitar o atendimento.</li>
+          </ul>
+
+
+          <div class="cc-order-box">
+            <h4>Dados deste pedido</h4>
+
+            <div id="ccOrderAlert" class="cc-alert">
+              Preencha os dados obrigatórios antes de enviar.
+            </div>
+
+            <div class="cc-order-grid">
+              <div class="cc-field">
+                <label for="ccHasName">Vai com nome?</label>
+                <select id="ccHasName">
+                  <option value="Não">Não</option>
+                  <option value="Sim">Sim</option>
+                </select>
+              </div>
+
+              <div class="cc-field">
+                <label for="ccMugName">Nome na caneca</label>
+                <input id="ccMugName" type="text" placeholder="Digite o nome, se tiver">
+              </div>
+
+              <div class="cc-field">
+                <label for="ccHasPhoto">Precisa inserir foto?</label>
+                <select id="ccHasPhoto">
+                  <option value="Não">Não</option>
+                  <option value="Sim">Sim</option>
+                </select>
+              </div>
+
+              <div class="cc-field">
+                <label for="ccPhotoFile">Foto do cliente</label>
+                <input id="ccPhotoFile" class="cc-file-input" type="file" accept="image/*">
+              </div>
+
+              <div id="ccPhotoPreview" class="cc-photo-preview cc-field-full">
+                <img id="ccPhotoPreviewImg" src="" alt="Prévia da foto enviada">
+                <div>
+                  <strong id="ccPhotoFileName">Foto selecionada</strong>
+                  <span>A foto será enviada junto com o pedido para o n8n e poderá chegar como anexo/e link no e-mail.</span>
+                </div>
+              </div>
+
+              <div class="cc-field">
+                <label for="ccQuantity">Quantidade</label>
+                <input id="ccQuantity" type="number" min="1" step="1" value="1">
+              </div>
+
+              <div class="cc-field">
+                <label for="ccUrgency">Urgência</label>
+                <select id="ccUrgency">
+                  <option value="Normal">Normal</option>
+                  <option value="Urgente">Urgente</option>
+                  <option value="Retirada combinada">Retirada combinada</option>
+                </select>
+              </div>
+
+              <div class="cc-field">
+                <label for="ccDeliveryType">Entrega ou retirada</label>
+                <select id="ccDeliveryType">
+                  <option value="Retirar no local">Retirar no local</option>
+                  <option value="Entrega">Entrega</option>
+                </select>
+              </div>
+
+              <div id="ccDeliveryBox" class="cc-delivery-box cc-field-full is-hidden">
+                <div class="cc-delivery-grid">
+                  <div class="cc-field">
+                    <label for="ccDeliveryCep">CEP de entrega</label>
+                    <input id="ccDeliveryCep" type="text" inputmode="numeric" maxlength="9" placeholder="Digite o CEP do cliente">
+                  </div>
+
+                  <button id="ccCalculateDelivery" class="cc-delivery-calc" type="button">Calcular entrega</button>
+                </div>
+
+                <div class="cc-field cc-delivery-manual cc-benefit-control">
+                  <label for="ccSellerBenefit">Benefício exclusivo</label>
+                  <select id="ccSellerBenefit">
+                    <option value="Não">Cliente comum</option>
+                    <option value="Sim">Vendedor/parceiro — frete grátis</option>
+                  </select>
+                  <div class="cc-seller-benefit-box">
+                    Benefício aplicado automaticamente quando o código do vendedor é validado.
+                  </div>
+                </div>
+
+                <div class="cc-field cc-delivery-manual">
+                  <label for="ccDeliveryFeeManual">Taxa de entrega calculada</label>
+                  <input id="ccDeliveryFeeManual" type="text" value="R$ 0,00" readonly>
+                </div>
+
+                <div id="ccDeliveryResult" class="cc-delivery-result">
+                  Base de cálculo: CEP 88348429 — Rua Monte Frade Macaé, 130, Monte Alegre, Camboriú/SC.
+                  O cliente digita o CEP dele e o sistema calcula automaticamente: até 2,5 km R$ 5; acima de 2,5 km R$ 10 dentro de Camboriú/Balneário Camboriú. Outras cidades: consultar entrega.
+                </div>
+
+                <a id="ccDeliveryConsultWhatsapp" class="cc-consult-delivery" href="#" target="_blank" rel="noopener">
+                  Consultar entrega para esta cidade
+                </a>
+              </div>
+
+              <div class="cc-field">
+                <label for="ccCrochetQty">Canecas com suporte premium em crochê</label>
+                <input id="ccCrochetQty" type="number" min="0" step="1" value="0">
+                <div class="cc-helper-text">Informe em quantas canecas deste modelo entra o suporte. Máximo igual à quantidade.</div>
+              </div>
+
+              <div class="cc-field">
+                <label for="ccChocolateQty">Canecas com chocolates Sonho de Valsa</label>
+                <input id="ccChocolateQty" type="number" min="0" step="1" value="0">
+                <div class="cc-helper-text">Informe em quantas canecas deste modelo entram os chocolates. Máximo igual à quantidade.</div>
+              </div>
+
+              <div class="cc-coupon-box cc-field-full">
+                <div class="cc-coupon-grid">
+                  <div class="cc-field">
+                    <label for="ccCouponCode">Cupom de desconto</label>
+                    <input id="ccCouponCode" type="text" placeholder="Digite seu cupom" autocomplete="off">
+                  </div>
+
+                  <button id="ccApplyCoupon" class="cc-apply-coupon" type="button">Aplicar cupom</button>
+                </div>
+
+                <div id="ccCouponResult" class="cc-coupon-result">
+                  Digite o cupom informado pela equipe para aplicar o desconto.
+                </div>
+              </div>
+
+              <div class="cc-price-box cc-field-full">
+                <div class="cc-price-row">
+                  <span>Caneca personalizada</span>
+                  <strong id="ccBaseLine">1 × R$ 30,00</strong>
+                </div>
+
+                <div class="cc-price-row">
+                  <span>Suporte premium em crochê</span>
+                  <strong id="ccCrochetLine">0 × R$ 6,00</strong>
+                </div>
+
+                <div class="cc-price-row">
+                  <span>Chocolates Sonho de Valsa</span>
+                  <strong id="ccChocolateLine">0 × R$ 6,00</strong>
+                </div>
+
+                <div class="cc-price-row is-discount">
+                  <span>Desconto aplicado</span>
+                  <strong id="ccDiscountLine">R$ 0,00</strong>
+                </div>
+
+                <div class="cc-price-row is-commission">
+                  <span>Comissão prevista do vendedor</span>
+                  <strong id="ccCommissionLine">R$ 0,00</strong>
+                </div>
+
+                <div class="cc-price-row is-delivery">
+                  <span>Taxa de entrega</span>
+                  <strong id="ccDeliveryFeeLine">R$ 0,00</strong>
+                </div>
+
+                <div class="cc-price-row cc-total-row">
+                  <span>Total do item</span>
+                  <strong id="ccSubtotal">R$ 30,00</strong>
+                </div>
+
+                <p class="cc-price-note">
+                  A caneca custa R$ 30,00. O suporte em crochê custa +R$ 6,00 por unidade selecionada. Os chocolates custam +R$ 6,00 por unidade selecionada. Retirada no local é grátis. Para entrega, calcule pelo CEP ou selecione a taxa manualmente.
+                </p>
+              </div>
+
+              <div class="cc-field">
+                <label for="ccPaymentMethod">Forma de pagamento preferida</label>
+                <select id="ccPaymentMethod">
+                  <option value="Pix">Pix</option>
+                  <option value="Link RecargaPay">Link RecargaPay</option>
+                  <option value="Cartão via link">Cartão via link</option>
+                  <option value="Dinheiro na retirada">Dinheiro na retirada</option>
+                  <option value="A combinar">A combinar</option>
+                </select>
+              </div>
+
+              <div class="cc-field">
+                <label for="ccPaymentStatus">Status do pagamento</label>
+                <select id="ccPaymentStatus">
+                  <option value="Aguardando pagamento">Aguardando pagamento</option>
+                  <option value="Pago">Pago</option>
+                  <option value="Sinal pago">Sinal pago</option>
+                  <option value="Pagamento na retirada">Pagamento na retirada</option>
+                  <option value="A combinar">A combinar</option>
+                </select>
+              </div>
+
+              <div class="cc-field cc-field-full">
+                <label for="ccPaymentNote">Observação de pagamento</label>
+                <textarea id="ccPaymentNote" placeholder="Ex: cliente pediu link RecargaPay, enviar Pix, pagamento na retirada..."></textarea>
+              </div>
+
+              <div class="cc-field cc-field-full">
+                <label for="ccOrderNotes">Observações</label>
+                <textarea id="ccOrderNotes" placeholder="Ex: colocar foto centralizada, nome embaixo, revisar com cliente antes de produzir..."></textarea>
+              </div>
+            </div>
+          </div>
+
+          <div class="cc-modal-actions">
+            <button id="ccAddToCart" class="cc-btn cc-add-cart" type="button">
+              Inserir no carrinho
+            </button>
+
+            <button id="ccSubmitOrder" class="cc-btn cc-submit-order" type="button">
+              Enviar pedido por e-mail
+            </button>
+
+            <button id="ccCopyCode" class="cc-btn cc-btn-secondary cc-copy-summary" type="button">
+              Baixar PDF do pedido
+            </button>
+
+            <div id="ccOrderStatus" class="cc-order-status"></div>
+          </div>
+
+          <div class="cc-note">
+            Dica: confira o código do modelo escolhido antes de inserir no carrinho. Isso evita confusão entre artes parecidas.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div id="ccCartPanel" class="cc-cart-panel">
+    <div id="ccCartToggle" class="cc-cart-head" role="button" tabindex="0">
+      <div>
+        <strong>Carrinho do pedido</strong>
+        <small>Clique para abrir ou fechar</small>
+      </div>
+      <span id="ccCartCount">0</span>
+    </div>
+
+    <div class="cc-cart-body">
+      <div id="ccCartList" class="cc-cart-list">
+        <div class="cc-cart-empty">Nenhum modelo adicionado ainda.</div>
+      </div>
+
+      <div class="cc-cart-total">
+        <span>Total do carrinho</span>
+        <strong id="ccCartTotal">R$ 0,00</strong>
+      </div>
+
+      <div class="cc-cart-actions">
+        <button id="ccCartEmail" class="cc-btn cc-cart-email" type="button">Enviar carrinho por e-mail</button>
+        <button id="ccCartPdf" class="cc-btn cc-cart-pdf" type="button">Baixar PDF do carrinho</button>
+        <div class="cc-cart-note">Use o carrinho para fechar vários modelos no mesmo atendimento sem atravessar a venda do vendedor.</div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <div id="ccBumpOverlay" class="cc-bump-overlay" aria-hidden="true">
+    <div class="cc-bump-box" role="dialog" aria-modal="true">
+      <div class="cc-bump-head">
+        <div>
+          <h3>Quer deixar o presente mais completo?</h3>
+          <p>
+            Antes de finalizar, ofereça os adicionais para o cliente. Eles podem ser aplicados em todas as canecas deste item ou só em parte delas.
+          </p>
+        </div>
+
+        <button id="ccBumpClose" class="cc-bump-close" type="button" aria-label="Fechar">×</button>
+      </div>
+
+      <div class="cc-bump-grid">
+        <div id="ccBumpChocolate" class="cc-bump-card" role="button" tabindex="0">
+          <div class="cc-bump-visual">🍬</div>
+          <h4>Adicionar Sonho de Valsa</h4>
+          <p>Inclui chocolates junto à caneca para deixar o presente mais especial e pronto para entregar.</p>
+          <span class="cc-bump-price">+ R$ 6 por caneca selecionada</span>
+        </div>
+
+        <div id="ccBumpCrochet" class="cc-bump-card" role="button" tabindex="0">
+          <div class="cc-bump-visual">♡</div>
+          <h4>Adicionar suporte em crochê coração</h4>
+          <p>Suporte premium em formato de coração para apoiar a caneca e valorizar a apresentação do presente.</p>
+          <span class="cc-bump-price">+ R$ 6 por caneca selecionada</span>
+        </div>
+      </div>
+
+      <div class="cc-bump-delivery">
+        <strong>Taxa de entrega:</strong> retirada no local é grátis. Para Camboriú e Balneário Camboriú/SC, a entrega fica entre <strong>R$ 5 e R$ 10</strong>, dependendo do bairro/distância. Vendedores/parceiros têm frete grátis.
+      </div>
+
+      <div class="cc-bump-actions">
+        <button id="ccBumpApply" class="cc-btn cc-btn-primary" type="button">Aplicar adicionais ao item</button>
+        <button id="ccBumpSkip" class="cc-btn cc-btn-secondary" type="button">Não adicionar nada</button>
+      </div>
+    </div>
+  </div>
+
+
+  <div id="ccToast" class="cc-toast" aria-live="polite"></div>
+
+  <script>
+    (function () {
+      const BASE_URL = "https://solrevops.github.io/cafe-caneca-namorados/";
+
+      /*
+        Ajuste aqui se necessário.
+        Pelo seu repositório, aparentemente são 278 modelos.
+        Se depois você subir até 280, troque para 280.
+      */
+      const TOTAL_MODELS = 278;
+
+      /*
+        Troque pelo WhatsApp real do Studio Café Caneca.
+        Formato: DDI + DDD + número, sem espaço, sem traço.
+        Exemplo: 5547999999999
+      */
+      const WHATSAPP_NUMBER = "5547996232193";
+
+      /*
+        WEBHOOK PARA ENVIAR PEDIDO POR E-MAIL
+        Crie esse webhook no n8n e mantenha o caminho abaixo.
+        Depois de criar o workflow, ative o modo Production no n8n.
+      */
+      const ORDER_WEBHOOK_URL = "https://n8n.somosasol.com.br/webhook/cafe-caneca-novo-pedido";
+      window.CAFE_CANECA_WEBHOOK_URL = ORDER_WEBHOOK_URL;
+
+      const DELIVERY_ORIGIN = {
+        cep: "88348429",
+        address: "Rua Monte Frade Macaé, 130, Monte Alegre, Camboriú/SC",
+        radiusKm: 2.5,
+        feeNear: 5,
+        feeFar: 10
+      };
+
+      let calculatedDeliveryDistanceKm = null;
+      let deliveryRequiresConsultation = false;
+      let lastDeliveryCity = "";
+      let lastDeliveryState = "";
+      let calculatedDeliveryFee = 0;
+
+      const COMMISSION_PER_MUG = 9;
+      const SHIPPING_CONSULT_WHATSAPP = "5547996232193";
+
+      /*
+        CUPONS
+        O cupom deste mês já fica previsto aqui.
+        IMPORTANTE: como o valor do desconto ainda não foi definido, COPA26 está com value: 0.
+        Quando quiser ativar desconto real:
+        - type: "fixed", value: 5    => R$ 5 de desconto
+        - type: "percent", value: 10 => 10% de desconto
+      */
+      const COUPONS = {
+        "COPA26": {
+          type: "fixed",
+          value: 5,
+          label: "Cupom aplicado: R$ 5 de desconto."
+        }
+      };
+
+      let appliedCoupon = null;
+
+      /*
+        LISTA BÁSICA DE CÓDIGOS DE VENDEDORES
+        Edite aqui quando quiser adicionar/remover vendedores.
+        O código precisa ser digitado na página exatamente como está abaixo.
+      */
+      const SELLER_CODES = {
+        "ROBSON": { name: "Robson", freeShipping: true },
+        "VENDEDOR01": { name: "Vendedor 01", freeShipping: true },
+        "VENDEDOR02": { name: "Vendedor 02", freeShipping: true },
+        "PARCEIRO": { name: "Parceiro Café Caneca", freeShipping: true }
+      };
+
+      let validatedSeller = null;
+
+      const MODEL_TAGS = {"1":{"id":1,"codigo":"001","titulo":"Modelo 001","hasPhoto":"nao","photoShape":"","color":"rosa","audience":"casal","notes":""},"2":{"id":2,"codigo":"002","titulo":"Modelo 002","hasPhoto":"sim","photoShape":"retangulo","color":"azul","audience":"feminino","notes":""},"3":{"id":3,"codigo":"003","titulo":"Modelo 003","hasPhoto":"nao","photoShape":"","color":"rosa","audience":"feminino","notes":""},"4":{"id":4,"codigo":"004","titulo":"Modelo 004","hasPhoto":"nao","photoShape":"","color":"rosa","audience":"feminino","notes":""},"5":{"id":5,"codigo":"005","titulo":"Modelo 005","hasPhoto":"sim","photoShape":"coracao","color":"rosa","audience":"feminino","notes":""},"6":{"id":6,"codigo":"006","titulo":"Modelo 006","hasPhoto":"nao","photoShape":"","color":"bege","audience":"casal","notes":""},"7":{"id":7,"codigo":"007","titulo":"Modelo 007","hasPhoto":"nao","photoShape":"","color":"outro","audience":"casal","notes":""},"8":{"id":8,"codigo":"008","titulo":"Modelo 008","hasPhoto":"nao","photoShape":"","color":"azul","audience":"casal","notes":""},"9":{"id":9,"codigo":"009","titulo":"Modelo 009","hasPhoto":"nao","photoShape":"","color":"branco","audience":"feminino","notes":""},"10":{"id":10,"codigo":"010","titulo":"Modelo 010","hasPhoto":"nao","photoShape":"","color":"outro","audience":"casal","notes":""},"11":{"id":11,"codigo":"011","titulo":"Modelo 011","hasPhoto":"sim","photoShape":"retangulo","color":"rosa","audience":"feminino","notes":""},"12":{"id":12,"codigo":"012","titulo":"Modelo 012","hasPhoto":"sim","photoShape":"outro","color":"bege","audience":"feminino","notes":""},"13":{"id":13,"codigo":"013","titulo":"Modelo 013","hasPhoto":"nao","photoShape":"","color":"vermelho","audience":"feminino","notes":""},"14":{"id":14,"codigo":"014","titulo":"Modelo 014","hasPhoto":"nao","photoShape":"","color":"bege","audience":"feminino","notes":""},"15":{"id":15,"codigo":"015","titulo":"Modelo 015","hasPhoto":"nao","photoShape":"","color":"branco","audience":"casal","notes":""},"16":{"id":16,"codigo":"016","titulo":"Modelo 016","hasPhoto":"nao","photoShape":"","color":"rosa","audience":"feminino","notes":""},"17":{"id":17,"codigo":"017","titulo":"Modelo 017","hasPhoto":"sim","photoShape":"coracao","color":"outro","audience":"feminino","notes":""},"18":{"id":18,"codigo":"018","titulo":"Modelo 018","hasPhoto":"nao","photoShape":"","color":"branco","audience":"casal","notes":""},"19":{"id":19,"codigo":"019","titulo":"Modelo 019","hasPhoto":"nao","photoShape":"","color":"branco","audience":"casal","notes":""},"20":{"id":20,"codigo":"020","titulo":"Modelo 020","hasPhoto":"nao","photoShape":"","color":"branco","audience":"casal","notes":""},"21":{"id":21,"codigo":"021","titulo":"Modelo 021","hasPhoto":"nao","photoShape":"","color":"rosa","audience":"feminino","notes":""},"22":{"id":22,"codigo":"022","titulo":"Modelo 022","hasPhoto":"nao","photoShape":"","color":"branco","audience":"feminino","notes":""},"23":{"id":23,"codigo":"023","titulo":"Modelo 023","hasPhoto":"sim","photoShape":"coracao","color":"rosa","audience":"feminino","notes":""},"24":{"id":24,"codigo":"024","titulo":"Modelo 024","hasPhoto":"nao","photoShape":"","color":"azul","audience":"masculino","notes":""},"25":{"id":25,"codigo":"025","titulo":"Modelo 025","hasPhoto":"sim","photoShape":"coracao","color":"rosa","audience":"feminino","notes":""},"26":{"id":26,"codigo":"026","titulo":"Modelo 026","hasPhoto":"sim","photoShape":"circulo","color":"rosa","audience":"feminino","notes":""},"27":{"id":27,"codigo":"027","titulo":"Modelo 027","hasPhoto":"nao","photoShape":"","color":"branco","audience":"feminino","notes":""},"28":{"id":28,"codigo":"028","titulo":"Modelo 028","hasPhoto":"nao","photoShape":"","color":"rosa","audience":"feminino","notes":""},"29":{"id":29,"codigo":"029","titulo":"Modelo 029","hasPhoto":"sim","photoShape":"coracao","color":"rosa","audience":"feminino","notes":""},"30":{"id":30,"codigo":"030","titulo":"Modelo 030","hasPhoto":"sim","photoShape":"coracao","color":"rosa","audience":"feminino","notes":""},"31":{"id":31,"codigo":"031","titulo":"Modelo 031","hasPhoto":"sim","photoShape":"quadrado","color":"outro","audience":"casal","notes":""},"32":{"id":32,"codigo":"032","titulo":"Modelo 032","hasPhoto":"nao","photoShape":"","color":"rosa","audience":"feminino","notes":""},"33":{"id":33,"codigo":"033","titulo":"Modelo 033","hasPhoto":"nao","photoShape":"","color":"bege","audience":"casal","notes":""},"34":{"id":34,"codigo":"034","titulo":"Modelo 034","hasPhoto":"sim","photoShape":"coracao","color":"rosa","audience":"feminino","notes":""},"35":{"id":35,"codigo":"035","titulo":"Modelo 035","hasPhoto":"nao","photoShape":"nenhum","color":"vermelho","audience":"feminino","notes":""},"36":{"id":36,"codigo":"036","titulo":"Modelo 036","hasPhoto":"sim","photoShape":"retangulo","color":"vermelho","audience":"casal","notes":""},"37":{"id":37,"codigo":"037","titulo":"Modelo 037","hasPhoto":"nao","photoShape":"","color":"rosa","audience":"feminino","notes":""},"38":{"id":38,"codigo":"038","titulo":"Modelo 038","hasPhoto":"nao","photoShape":"","color":"rosa","audience":"feminino","notes":""},"39":{"id":39,"codigo":"039","titulo":"Modelo 039","hasPhoto":"sim","photoShape":"retangulo","color":"bege","audience":"casal","notes":""},"40":{"id":40,"codigo":"040","titulo":"Modelo 040","hasPhoto":"sim","photoShape":"circulo","color":"rosa","audience":"feminino","notes":""},"41":{"id":41,"codigo":"041","titulo":"Modelo 041","hasPhoto":"sim","photoShape":"circulo","color":"rosa","audience":"feminino","notes":""},"42":{"id":42,"codigo":"042","titulo":"Modelo 042","hasPhoto":"nao","photoShape":"retangulo","color":"rosa","audience":"feminino","notes":""},"43":{"id":43,"codigo":"043","titulo":"Modelo 043","hasPhoto":"nao","photoShape":"","color":"rosa","audience":"feminino","notes":""},"44":{"id":44,"codigo":"044","titulo":"Modelo 044","hasPhoto":"sim","photoShape":"quadrado","color":"rosa","audience":"feminino","notes":""},"45":{"id":45,"codigo":"045","titulo":"Modelo 045","hasPhoto":"nao","photoShape":"","color":"rosa","audience":"feminino","notes":""},"46":{"id":46,"codigo":"046","titulo":"Modelo 046","hasPhoto":"nao","photoShape":"","color":"branco","audience":"casal","notes":""},"47":{"id":47,"codigo":"047","titulo":"Modelo 047","hasPhoto":"nao","photoShape":"","color":"rosa","audience":"casal","notes":""},"48":{"id":48,"codigo":"048","titulo":"Modelo 048","hasPhoto":"sim","photoShape":"quadrado","color":"bege","audience":"casal","notes":""},"49":{"id":49,"codigo":"049","titulo":"Modelo 049","hasPhoto":"sim","photoShape":"coracao","color":"bege","audience":"feminino","notes":""},"50":{"id":50,"codigo":"050","titulo":"Modelo 050","hasPhoto":"sim","photoShape":"coracao","color":"bege","audience":"casal","notes":""},"51":{"id":51,"codigo":"051","titulo":"Modelo 051","hasPhoto":"nao","photoShape":"","color":"branco","audience":"casal","notes":""},"52":{"id":52,"codigo":"052","titulo":"Modelo 052","hasPhoto":"sim","photoShape":"retangulo","color":"bege","audience":"casal","notes":""},"53":{"id":53,"codigo":"053","titulo":"Modelo 053","hasPhoto":"nao","photoShape":"","color":"rosa","audience":"feminino","notes":""},"54":{"id":54,"codigo":"054","titulo":"Modelo 054","hasPhoto":"nao","photoShape":"","color":"rosa","audience":"masculino","notes":""},"55":{"id":55,"codigo":"055","titulo":"Modelo 055","hasPhoto":"sim","photoShape":"coracao","color":"rosa","audience":"feminino","notes":""},"56":{"id":56,"codigo":"056","titulo":"Modelo 056","hasPhoto":"nao","photoShape":"","color":"rosa","audience":"feminino","notes":""},"57":{"id":57,"codigo":"057","titulo":"Modelo 057","hasPhoto":"nao","photoShape":"","color":"rosa","audience":"feminino","notes":""},"58":{"id":58,"codigo":"058","titulo":"Modelo 058","hasPhoto":"sim","photoShape":"outro","color":"rosa","audience":"feminino","notes":""},"59":{"id":59,"codigo":"059","titulo":"Modelo 059","hasPhoto":"sim","photoShape":"circulo","color":"rosa","audience":"feminino","notes":""},"60":{"id":60,"codigo":"060","titulo":"Modelo 060","hasPhoto":"nao","photoShape":"","color":"rosa","audience":"feminino","notes":""},"61":{"id":61,"codigo":"061","titulo":"Modelo 061","hasPhoto":"nao","photoShape":"","color":"rosa","audience":"feminino","notes":""},"62":{"id":62,"codigo":"062","titulo":"Modelo 062","hasPhoto":"nao","photoShape":"","color":"rosa","audience":"feminino","notes":""},"63":{"id":63,"codigo":"063","titulo":"Modelo 063","hasPhoto":"sim","photoShape":"circulo","color":"vermelho","audience":"feminino","notes":""},"64":{"id":64,"codigo":"064","titulo":"Modelo 064","hasPhoto":"nao","photoShape":"","color":"bege","audience":"feminino","notes":""},"65":{"id":65,"codigo":"065","titulo":"Modelo 065","hasPhoto":"nao","photoShape":"","color":"bege","audience":"casal","notes":""},"66":{"id":66,"codigo":"066","titulo":"Modelo 066","hasPhoto":"sim","photoShape":"coracao","color":"bege","audience":"casal","notes":""},"67":{"id":67,"codigo":"067","titulo":"Modelo 067","hasPhoto":"nao","photoShape":"","color":"bege","audience":"casal","notes":""},"68":{"id":68,"codigo":"068","titulo":"Modelo 068","hasPhoto":"nao","photoShape":"","color":"rosa","audience":"feminino","notes":""},"69":{"id":69,"codigo":"069","titulo":"Modelo 069","hasPhoto":"sim","photoShape":"coracao","color":"bege","audience":"casal","notes":""},"70":{"id":70,"codigo":"070","titulo":"Modelo 070","hasPhoto":"nao","photoShape":"","color":"rosa","audience":"feminino","notes":""},"71":{"id":71,"codigo":"071","titulo":"Modelo 071","hasPhoto":"sim","photoShape":"coracao","color":"rosa","audience":"feminino","notes":""},"72":{"id":72,"codigo":"072","titulo":"Modelo 072","hasPhoto":"sim","photoShape":"","color":"rosa","audience":"feminino","notes":""},"73":{"id":73,"codigo":"073","titulo":"Modelo 073","hasPhoto":"nao","photoShape":"","color":"azul","audience":"masculino","notes":""},"74":{"id":74,"codigo":"074","titulo":"Modelo 074","hasPhoto":"sim","photoShape":"coracao","color":"azul","audience":"masculino","notes":""},"75":{"id":75,"codigo":"075","titulo":"Modelo 075","hasPhoto":"nao","photoShape":"","color":"outro","audience":"casal","notes":""},"76":{"id":76,"codigo":"076","titulo":"Modelo 076","hasPhoto":"nao","photoShape":"","color":"branco","audience":"casal","notes":""},"77":{"id":77,"codigo":"077","titulo":"Modelo 077","hasPhoto":"nao","photoShape":"","color":"branco","audience":"casal","notes":""},"78":{"id":78,"codigo":"078","titulo":"Modelo 078","hasPhoto":"nao","photoShape":"","color":"bege","audience":"casal","notes":""},"79":{"id":79,"codigo":"079","titulo":"Modelo 079","hasPhoto":"nao","photoShape":"","color":"rosa","audience":"feminino","notes":""},"80":{"id":80,"codigo":"080","titulo":"Modelo 080","hasPhoto":"nao","photoShape":"","color":"outro","audience":"casal","notes":""},"81":{"id":81,"codigo":"081","titulo":"Modelo 081","hasPhoto":"nao","photoShape":"","color":"branco","audience":"casal","notes":""},"82":{"id":82,"codigo":"082","titulo":"Modelo 082","hasPhoto":"nao","photoShape":"","color":"branco","audience":"casal","notes":""},"83":{"id":83,"codigo":"083","titulo":"Modelo 083","hasPhoto":"nao","photoShape":"","color":"bege","audience":"casal","notes":""},"84":{"id":84,"codigo":"084","titulo":"Modelo 084","hasPhoto":"sim","photoShape":"coracao","color":"branco","audience":"casal","notes":""},"85":{"id":85,"codigo":"085","titulo":"Modelo 085","hasPhoto":"nao","photoShape":"","color":"rosa","audience":"feminino","notes":""},"86":{"id":86,"codigo":"086","titulo":"Modelo 086","hasPhoto":"nao","photoShape":"","color":"branco","audience":"feminino","notes":""},"87":{"id":87,"codigo":"087","titulo":"Modelo 087","hasPhoto":"nao","photoShape":"","color":"bege","audience":"masculino","notes":""},"88":{"id":88,"codigo":"088","titulo":"Modelo 088","hasPhoto":"nao","photoShape":"","color":"branco","audience":"casal","notes":""},"89":{"id":89,"codigo":"089","titulo":"Modelo 089","hasPhoto":"sim","photoShape":"coracao","color":"branco","audience":"masculino","notes":""},"90":{"id":90,"codigo":"090","titulo":"Modelo 090","hasPhoto":"nao","photoShape":"","color":"azul","audience":"masculino","notes":""},"91":{"id":91,"codigo":"091","titulo":"Modelo 091","hasPhoto":"sim","photoShape":"coracao","color":"vermelho","audience":"feminino","notes":""},"92":{"id":92,"codigo":"092","titulo":"Modelo 092","hasPhoto":"sim","photoShape":"circulo","color":"azul","audience":"masculino","notes":""},"93":{"id":93,"codigo":"093","titulo":"Modelo 093","hasPhoto":"sim","photoShape":"circulo","color":"rosa","audience":"feminino","notes":""},"94":{"id":94,"codigo":"094","titulo":"Modelo 094","hasPhoto":"nao","photoShape":"retangulo","color":"bege","audience":"masculino","notes":""},"95":{"id":95,"codigo":"095","titulo":"Modelo 095","hasPhoto":"sim","photoShape":"retangulo","color":"rosa","audience":"feminino","notes":""},"96":{"id":96,"codigo":"096","titulo":"Modelo 096","hasPhoto":"nao","photoShape":"","color":"azul","audience":"casal","notes":""},"97":{"id":97,"codigo":"097","titulo":"Modelo 097","hasPhoto":"nao","photoShape":"","color":"outro","audience":"casal","notes":""},"98":{"id":98,"codigo":"098","titulo":"Modelo 098","hasPhoto":"nao","photoShape":"","color":"branco","audience":"casal","notes":""},"99":{"id":99,"codigo":"099","titulo":"Modelo 099","hasPhoto":"nao","photoShape":"","color":"branco","audience":"casal","notes":""},"100":{"id":100,"codigo":"100","titulo":"Modelo 100","hasPhoto":"nao","photoShape":"","color":"rosa","audience":"casal","notes":""},"101":{"id":101,"codigo":"101","titulo":"Modelo 101","hasPhoto":"nao","photoShape":"","color":"rosa","audience":"feminino","notes":""},"102":{"id":102,"codigo":"102","titulo":"Modelo 102","hasPhoto":"nao","photoShape":"","color":"branco","audience":"casal","notes":""},"103":{"id":103,"codigo":"103","titulo":"Modelo 103","hasPhoto":"nao","photoShape":"","color":"bege","audience":"casal","notes":""},"104":{"id":104,"codigo":"104","titulo":"Modelo 104","hasPhoto":"nao","photoShape":"","color":"branco","audience":"casal","notes":""},"105":{"id":105,"codigo":"105","titulo":"Modelo 105","hasPhoto":"sim","photoShape":"quadrado","color":"azul","audience":"masculino","notes":""},"106":{"id":106,"codigo":"106","titulo":"Modelo 106","hasPhoto":"nao","photoShape":"","color":"azul","audience":"masculino","notes":""},"107":{"id":107,"codigo":"107","titulo":"Modelo 107","hasPhoto":"sim","photoShape":"retangulo","color":"rosa","audience":"feminino","notes":""},"108":{"id":108,"codigo":"108","titulo":"Modelo 108","hasPhoto":"nao","photoShape":"","color":"azul","audience":"masculino","notes":""},"109":{"id":109,"codigo":"109","titulo":"Modelo 109","hasPhoto":"nao","photoShape":"","color":"azul","audience":"masculino","notes":""},"110":{"id":110,"codigo":"110","titulo":"Modelo 110","hasPhoto":"nao","photoShape":"","color":"colorido","audience":"feminino","notes":""},"111":{"id":111,"codigo":"111","titulo":"Modelo 111","hasPhoto":"nao","photoShape":"","color":"branco","audience":"casal","notes":""},"112":{"id":112,"codigo":"112","titulo":"Modelo 112","hasPhoto":"sim","photoShape":"coracao","color":"rosa","audience":"casal","notes":""},"113":{"id":113,"codigo":"113","titulo":"Modelo 113","hasPhoto":"nao","photoShape":"","color":"azul","audience":"masculino","notes":""},"114":{"id":114,"codigo":"114","titulo":"Modelo 114","hasPhoto":"nao","photoShape":"","color":"rosa","audience":"feminino","notes":""},"115":{"id":115,"codigo":"115","titulo":"Modelo 115","hasPhoto":"nao","photoShape":"","color":"rosa","audience":"feminino","notes":""},"116":{"id":116,"codigo":"116","titulo":"Modelo 116","hasPhoto":"nao","photoShape":"","color":"rosa","audience":"feminino","notes":""},"117":{"id":117,"codigo":"117","titulo":"Modelo 117","hasPhoto":"nao","photoShape":"","color":"bege","audience":"casal","notes":""},"118":{"id":118,"codigo":"118","titulo":"Modelo 118","hasPhoto":"nao","photoShape":"","color":"outro","audience":"casal","notes":""},"119":{"id":119,"codigo":"119","titulo":"Modelo 119","hasPhoto":"nao","photoShape":"","color":"outro","audience":"casal","notes":""},"120":{"id":120,"codigo":"120","titulo":"Modelo 120","hasPhoto":"nao","photoShape":"","color":"bege","audience":"feminino","notes":""},"121":{"id":121,"codigo":"121","titulo":"Modelo 121","hasPhoto":"nao","photoShape":"","color":"bege","audience":"feminino","notes":""},"122":{"id":122,"codigo":"122","titulo":"Modelo 122","hasPhoto":"nao","photoShape":"","color":"branco","audience":"casal","notes":""},"123":{"id":123,"codigo":"123","titulo":"Modelo 123","hasPhoto":"nao","photoShape":"","color":"rosa","audience":"feminino","notes":""},"124":{"id":124,"codigo":"124","titulo":"Modelo 124","hasPhoto":"nao","photoShape":"","color":"azul","audience":"masculino","notes":""},"125":{"id":125,"codigo":"125","titulo":"Modelo 125","hasPhoto":"sim","photoShape":"retangulo","color":"branco","audience":"masculino","notes":""},"126":{"id":126,"codigo":"126","titulo":"Modelo 126","hasPhoto":"nao","photoShape":"","color":"bege","audience":"casal","notes":""},"127":{"id":127,"codigo":"127","titulo":"Modelo 127","hasPhoto":"nao","photoShape":"","color":"bege","audience":"casal","notes":""},"128":{"id":128,"codigo":"128","titulo":"Modelo 128","hasPhoto":"nao","photoShape":"","color":"branco","audience":"casal","notes":""},"129":{"id":129,"codigo":"129","titulo":"Modelo 129","hasPhoto":"nao","photoShape":"","color":"outro","audience":"casal","notes":""},"130":{"id":130,"codigo":"130","titulo":"Modelo 130","hasPhoto":"sim","photoShape":"outro","color":"branco","audience":"casal","notes":""},"131":{"id":131,"codigo":"131","titulo":"Modelo 131","hasPhoto":"nao","photoShape":"","color":"branco","audience":"casal","notes":""},"132":{"id":132,"codigo":"132","titulo":"Modelo 132","hasPhoto":"nao","photoShape":"","color":"rosa","audience":"feminino","notes":""},"133":{"id":133,"codigo":"133","titulo":"Modelo 133","hasPhoto":"nao","photoShape":"","color":"outro","audience":"casal","notes":""},"134":{"id":134,"codigo":"134","titulo":"Modelo 134","hasPhoto":"nao","photoShape":"","color":"branco","audience":"casal","notes":""},"135":{"id":135,"codigo":"135","titulo":"Modelo 135","hasPhoto":"nao","photoShape":"","color":"rosa","audience":"feminino","notes":""},"136":{"id":136,"codigo":"136","titulo":"Modelo 136","hasPhoto":"nao","photoShape":"","color":"preto","audience":"casal","notes":""},"137":{"id":137,"codigo":"137","titulo":"Modelo 137","hasPhoto":"nao","photoShape":"","color":"colorido","audience":"casal","notes":""},"138":{"id":138,"codigo":"138","titulo":"Modelo 138","hasPhoto":"nao","photoShape":"","color":"branco","audience":"casal","notes":""},"139":{"id":139,"codigo":"139","titulo":"Modelo 139","hasPhoto":"nao","photoShape":"","color":"vermelho","audience":"casal","notes":""},"140":{"id":140,"codigo":"140","titulo":"Modelo 140","hasPhoto":"nao","photoShape":"","color":"branco","audience":"casal","notes":""},"141":{"id":141,"codigo":"141","titulo":"Modelo 141","hasPhoto":"nao","photoShape":"","color":"vermelho","audience":"casal","notes":""},"142":{"id":142,"codigo":"142","titulo":"Modelo 142","hasPhoto":"sim","photoShape":"quadrado","color":"rosa","audience":"casal","notes":""},"143":{"id":143,"codigo":"143","titulo":"Modelo 143","hasPhoto":"sim","photoShape":"quadrado","color":"outro","audience":"casal","notes":""},"144":{"id":144,"codigo":"144","titulo":"Modelo 144","hasPhoto":"nao","photoShape":"","color":"branco","audience":"casal","notes":""},"145":{"id":145,"codigo":"145","titulo":"Modelo 145","hasPhoto":"nao","photoShape":"","color":"branco","audience":"casal","notes":""},"146":{"id":146,"codigo":"146","titulo":"Modelo 146","hasPhoto":"nao","photoShape":"","color":"azul","audience":"casal","notes":""},"147":{"id":147,"codigo":"147","titulo":"Modelo 147","hasPhoto":"nao","photoShape":"","color":"branco","audience":"casal","notes":""},"148":{"id":148,"codigo":"148","titulo":"Modelo 148","hasPhoto":"nao","photoShape":"","color":"azul","audience":"casal","notes":""},"149":{"id":149,"codigo":"149","titulo":"Modelo 149","hasPhoto":"nao","photoShape":"","color":"rosa","audience":"casal","notes":""},"150":{"id":150,"codigo":"150","titulo":"Modelo 150","hasPhoto":"nao","photoShape":"","color":"azul","audience":"casal","notes":""},"151":{"id":151,"codigo":"151","titulo":"Modelo 151","hasPhoto":"nao","photoShape":"","color":"preto","audience":"feminino","notes":""},"152":{"id":152,"codigo":"152","titulo":"Modelo 152","hasPhoto":"nao","photoShape":"","color":"azul","audience":"casal","notes":""},"153":{"id":153,"codigo":"153","titulo":"Modelo 153","hasPhoto":"nao","photoShape":"","color":"bege","audience":"masculino","notes":""},"154":{"id":154,"codigo":"154","titulo":"Modelo 154","hasPhoto":"nao","photoShape":"","color":"outro","audience":"casal","notes":""},"155":{"id":155,"codigo":"155","titulo":"Modelo 155","hasPhoto":"nao","photoShape":"","color":"azul","audience":"casal","notes":""},"156":{"id":156,"codigo":"156","titulo":"Modelo 156","hasPhoto":"nao","photoShape":"","color":"colorido","audience":"casal","notes":""},"157":{"id":157,"codigo":"157","titulo":"Modelo 157","hasPhoto":"sim","photoShape":"circulo","color":"azul","audience":"casal","notes":""},"158":{"id":158,"codigo":"158","titulo":"Modelo 158","hasPhoto":"nao","photoShape":"","color":"branco","audience":"casal","notes":""},"159":{"id":159,"codigo":"159","titulo":"Modelo 159","hasPhoto":"sim","photoShape":"coracao","color":"vermelho","audience":"casal","notes":""},"160":{"id":160,"codigo":"160","titulo":"Modelo 160","hasPhoto":"nao","photoShape":"","color":"branco","audience":"casal","notes":""},"161":{"id":161,"codigo":"161","titulo":"Modelo 161","hasPhoto":"nao","photoShape":"","color":"outro","audience":"feminino","notes":""},"162":{"id":162,"codigo":"162","titulo":"Modelo 162","hasPhoto":"nao","photoShape":"","color":"branco","audience":"casal","notes":""},"163":{"id":163,"codigo":"163","titulo":"Modelo 163","hasPhoto":"nao","photoShape":"","color":"colorido","audience":"casal","notes":""},"164":{"id":164,"codigo":"164","titulo":"Modelo 164","hasPhoto":"nao","photoShape":"","color":"azul","audience":"casal","notes":""},"165":{"id":165,"codigo":"165","titulo":"Modelo 165","hasPhoto":"nao","photoShape":"","color":"rosa","audience":"feminino","notes":""},"166":{"id":166,"codigo":"166","titulo":"Modelo 166","hasPhoto":"nao","photoShape":"","color":"azul","audience":"casal","notes":""},"167":{"id":167,"codigo":"167","titulo":"Modelo 167","hasPhoto":"nao","photoShape":"","color":"branco","audience":"casal","notes":""},"168":{"id":168,"codigo":"168","titulo":"Modelo 168","hasPhoto":"nao","photoShape":"","color":"branco","audience":"masculino","notes":""},"169":{"id":169,"codigo":"169","titulo":"Modelo 169","hasPhoto":"sim","photoShape":"quadrado","color":"rosa","audience":"feminino","notes":""},"170":{"id":170,"codigo":"170","titulo":"Modelo 170","hasPhoto":"sim","photoShape":"quadrado","color":"rosa","audience":"feminino","notes":""},"171":{"id":171,"codigo":"171","titulo":"Modelo 171","hasPhoto":"sim","photoShape":"quadrado","color":"branco","audience":"casal","notes":""},"172":{"id":172,"codigo":"172","titulo":"Modelo 172","hasPhoto":"sim","photoShape":"quadrado","color":"branco","audience":"casal","notes":""},"173":{"id":173,"codigo":"173","titulo":"Modelo 173","hasPhoto":"sim","photoShape":"quadrado","color":"rosa","audience":"casal","notes":""},"174":{"id":174,"codigo":"174","titulo":"Modelo 174","hasPhoto":"sim","photoShape":"outro","color":"azul","audience":"casal","notes":""},"175":{"id":175,"codigo":"175","titulo":"Modelo 175","hasPhoto":"sim","photoShape":"quadrado","color":"branco","audience":"casal","notes":""},"176":{"id":176,"codigo":"176","titulo":"Modelo 176","hasPhoto":"sim","photoShape":"quadrado","color":"branco","audience":"feminino","notes":""},"177":{"id":177,"codigo":"177","titulo":"Modelo 177","hasPhoto":"sim","photoShape":"quadrado","color":"vermelho","audience":"casal","notes":""},"178":{"id":178,"codigo":"178","titulo":"Modelo 178","hasPhoto":"nao","photoShape":"","color":"branco","audience":"feminino","notes":""},"179":{"id":179,"codigo":"179","titulo":"Modelo 179","hasPhoto":"sim","photoShape":"quadrado","color":"rosa","audience":"feminino","notes":""},"180":{"id":180,"codigo":"180","titulo":"Modelo 180","hasPhoto":"sim","photoShape":"retangulo","color":"rosa","audience":"feminino","notes":""},"181":{"id":181,"codigo":"181","titulo":"Modelo 181","hasPhoto":"nao","photoShape":"","color":"branco","audience":"feminino","notes":""},"182":{"id":182,"codigo":"182","titulo":"Modelo 182","hasPhoto":"nao","photoShape":"","color":"outro","audience":"feminino","notes":""},"183":{"id":183,"codigo":"183","titulo":"Modelo 183","hasPhoto":"sim","photoShape":"quadrado","color":"azul","audience":"masculino","notes":""},"184":{"id":184,"codigo":"184","titulo":"Modelo 184","hasPhoto":"nao","photoShape":"","color":"branco","audience":"casal","notes":""},"185":{"id":185,"codigo":"185","titulo":"Modelo 185","hasPhoto":"nao","photoShape":"","color":"branco","audience":"masculino","notes":""},"186":{"id":186,"codigo":"186","titulo":"Modelo 186","hasPhoto":"nao","photoShape":"","color":"branco","audience":"masculino","notes":""},"187":{"id":187,"codigo":"187","titulo":"Modelo 187","hasPhoto":"nao","photoShape":"","color":"rosa","audience":"feminino","notes":""},"188":{"id":188,"codigo":"188","titulo":"Modelo 188","hasPhoto":"nao","photoShape":"","color":"bege","audience":"feminino","notes":""},"189":{"id":189,"codigo":"189","titulo":"Modelo 189","hasPhoto":"nao","photoShape":"","color":"azul","audience":"masculino","notes":""},"190":{"id":190,"codigo":"190","titulo":"Modelo 190","hasPhoto":"nao","photoShape":"","color":"rosa","audience":"feminino","notes":""},"191":{"id":191,"codigo":"191","titulo":"Modelo 191","hasPhoto":"nao","photoShape":"","color":"rosa","audience":"feminino","notes":""},"192":{"id":192,"codigo":"192","titulo":"Modelo 192","hasPhoto":"nao","photoShape":"","color":"branco","audience":"feminino","notes":""},"193":{"id":193,"codigo":"193","titulo":"Modelo 193","hasPhoto":"nao","photoShape":"","color":"branco","audience":"casal","notes":""},"194":{"id":194,"codigo":"194","titulo":"Modelo 194","hasPhoto":"nao","photoShape":"","color":"preto","audience":"feminino","notes":""},"195":{"id":195,"codigo":"195","titulo":"Modelo 195","hasPhoto":"nao","photoShape":"","color":"preto","audience":"masculino","notes":""},"196":{"id":196,"codigo":"196","titulo":"Modelo 196","hasPhoto":"nao","photoShape":"","color":"azul","audience":"masculino","notes":""},"197":{"id":197,"codigo":"197","titulo":"Modelo 197","hasPhoto":"sim","photoShape":"retangulo","color":"vermelho","audience":"feminino","notes":""},"198":{"id":198,"codigo":"198","titulo":"Modelo 198","hasPhoto":"sim","photoShape":"quadrado","color":"rosa","audience":"feminino","notes":""},"199":{"id":199,"codigo":"199","titulo":"Modelo 199","hasPhoto":"nao","photoShape":"","color":"azul","audience":"feminino","notes":""},"200":{"id":200,"codigo":"200","titulo":"Modelo 200","hasPhoto":"sim","photoShape":"retangulo","color":"azul","audience":"masculino","notes":""},"201":{"id":201,"codigo":"201","titulo":"Modelo 201","hasPhoto":"nao","photoShape":"","color":"outro","audience":"masculino","notes":""},"202":{"id":202,"codigo":"202","titulo":"Modelo 202","hasPhoto":"nao","photoShape":"","color":"rosa","audience":"feminino","notes":""},"203":{"id":203,"codigo":"203","titulo":"Modelo 203","hasPhoto":"sim","photoShape":"coracao","color":"outro","audience":"masculino","notes":""},"204":{"id":204,"codigo":"204","titulo":"Modelo 204","hasPhoto":"sim","photoShape":"coracao","color":"rosa","audience":"feminino","notes":""},"205":{"id":205,"codigo":"205","titulo":"Modelo 205","hasPhoto":"sim","photoShape":"coracao","color":"vermelho","audience":"casal","notes":""},"206":{"id":206,"codigo":"206","titulo":"Modelo 206","hasPhoto":"nao","photoShape":"","color":"vermelho","audience":"casal","notes":""},"207":{"id":207,"codigo":"207","titulo":"Modelo 207","hasPhoto":"sim","photoShape":"coracao","color":"vermelho","audience":"casal","notes":""},"208":{"id":208,"codigo":"208","titulo":"Modelo 208","hasPhoto":"nao","photoShape":"","color":"branco","audience":"casal","notes":""},"209":{"id":209,"codigo":"209","titulo":"Modelo 209","hasPhoto":"nao","photoShape":"","color":"vermelho","audience":"casal","notes":""},"210":{"id":210,"codigo":"210","titulo":"Modelo 210","hasPhoto":"nao","photoShape":"","color":"azul","audience":"masculino","notes":""},"211":{"id":211,"codigo":"211","titulo":"Modelo 211","hasPhoto":"nao","photoShape":"","color":"vermelho","audience":"casal","notes":""},"212":{"id":212,"codigo":"212","titulo":"Modelo 212","hasPhoto":"nao","photoShape":"","color":"vermelho","audience":"casal","notes":""},"213":{"id":213,"codigo":"213","titulo":"Modelo 213","hasPhoto":"nao","photoShape":"","color":"vermelho","audience":"casal","notes":""},"214":{"id":214,"codigo":"214","titulo":"Modelo 214","hasPhoto":"nao","photoShape":"","color":"branco","audience":"masculino","notes":""},"215":{"id":215,"codigo":"215","titulo":"Modelo 215","hasPhoto":"nao","photoShape":"","color":"azul","audience":"masculino","notes":""},"216":{"id":216,"codigo":"216","titulo":"Modelo 216","hasPhoto":"nao","photoShape":"","color":"azul","audience":"feminino","notes":""},"217":{"id":217,"codigo":"217","titulo":"Modelo 217","hasPhoto":"nao","photoShape":"","color":"branco","audience":"casal","notes":""},"218":{"id":218,"codigo":"218","titulo":"Modelo 218","hasPhoto":"nao","photoShape":"","color":"preto","audience":"casal","notes":""},"219":{"id":219,"codigo":"219","titulo":"Modelo 219","hasPhoto":"nao","photoShape":"","color":"branco","audience":"casal","notes":""},"220":{"id":220,"codigo":"220","titulo":"Modelo 220","hasPhoto":"nao","photoShape":"","color":"branco","audience":"casal","notes":""},"221":{"id":221,"codigo":"221","titulo":"Modelo 221","hasPhoto":"nao","photoShape":"","color":"vermelho","audience":"casal","notes":""},"222":{"id":222,"codigo":"222","titulo":"Modelo 222","hasPhoto":"nao","photoShape":"","color":"outro","audience":"casal","notes":""},"223":{"id":223,"codigo":"223","titulo":"Modelo 223","hasPhoto":"nao","photoShape":"","color":"vermelho","audience":"casal","notes":""},"224":{"id":224,"codigo":"224","titulo":"Modelo 224","hasPhoto":"nao","photoShape":"","color":"branco","audience":"feminino","notes":""},"225":{"id":225,"codigo":"225","titulo":"Modelo 225","hasPhoto":"sim","photoShape":"circulo","color":"rosa","audience":"feminino","notes":""},"226":{"id":226,"codigo":"226","titulo":"Modelo 226","hasPhoto":"nao","photoShape":"","color":"rosa","audience":"feminino","notes":""},"227":{"id":227,"codigo":"227","titulo":"Modelo 227","hasPhoto":"nao","photoShape":"","color":"vermelho","audience":"feminino","notes":""},"228":{"id":228,"codigo":"228","titulo":"Modelo 228","hasPhoto":"nao","photoShape":"","color":"rosa","audience":"feminino","notes":""},"229":{"id":229,"codigo":"229","titulo":"Modelo 229","hasPhoto":"nao","photoShape":"","color":"rosa","audience":"feminino","notes":""},"230":{"id":230,"codigo":"230","titulo":"Modelo 230","hasPhoto":"nao","photoShape":"","color":"preto","audience":"casal","notes":""},"231":{"id":231,"codigo":"231","titulo":"Modelo 231","hasPhoto":"nao","photoShape":"","color":"vermelho","audience":"casal","notes":""},"232":{"id":232,"codigo":"232","titulo":"Modelo 232","hasPhoto":"nao","photoShape":"","color":"vermelho","audience":"masculino","notes":""},"233":{"id":233,"codigo":"233","titulo":"Modelo 233","hasPhoto":"sim","photoShape":"coracao","color":"azul","audience":"casal","notes":""},"234":{"id":234,"codigo":"234","titulo":"Modelo 234","hasPhoto":"sim","photoShape":"retangulo","color":"outro","audience":"casal","notes":""},"235":{"id":235,"codigo":"235","titulo":"Modelo 235","hasPhoto":"sim","photoShape":"coracao","color":"vermelho","audience":"casal","notes":""},"236":{"id":236,"codigo":"236","titulo":"Modelo 236","hasPhoto":"sim","photoShape":"circulo","color":"azul","audience":"casal","notes":""},"237":{"id":237,"codigo":"237","titulo":"Modelo 237","hasPhoto":"sim","photoShape":"circulo","color":"vermelho","audience":"casal","notes":""},"238":{"id":238,"codigo":"238","titulo":"Modelo 238","hasPhoto":"sim","photoShape":"circulo","color":"vermelho","audience":"casal","notes":""},"239":{"id":239,"codigo":"239","titulo":"Modelo 239","hasPhoto":"sim","photoShape":"circulo","color":"vermelho","audience":"casal","notes":""},"240":{"id":240,"codigo":"240","titulo":"Modelo 240","hasPhoto":"sim","photoShape":"coracao","color":"azul","audience":"masculino","notes":""},"241":{"id":241,"codigo":"241","titulo":"Modelo 241","hasPhoto":"sim","photoShape":"circulo","color":"outro","audience":"masculino","notes":""},"242":{"id":242,"codigo":"242","titulo":"Modelo 242","hasPhoto":"sim","photoShape":"circulo","color":"outro","audience":"masculino","notes":""},"243":{"id":243,"codigo":"243","titulo":"Modelo 243","hasPhoto":"sim","photoShape":"coracao","color":"vermelho","audience":"casal","notes":""},"244":{"id":244,"codigo":"244","titulo":"Modelo 244","hasPhoto":"sim","photoShape":"circulo","color":"rosa","audience":"feminino","notes":""},"245":{"id":245,"codigo":"245","titulo":"Modelo 245","hasPhoto":"sim","photoShape":"circulo","color":"vermelho","audience":"feminino","notes":""},"246":{"id":246,"codigo":"246","titulo":"Modelo 246","hasPhoto":"nao","photoShape":"","color":"outro","audience":"masculino","notes":""},"247":{"id":247,"codigo":"247","titulo":"Modelo 247","hasPhoto":"nao","photoShape":"","color":"outro","audience":"masculino","notes":""},"248":{"id":248,"codigo":"248","titulo":"Modelo 248","hasPhoto":"nao","photoShape":"","color":"outro","audience":"masculino","notes":""},"249":{"id":249,"codigo":"249","titulo":"Modelo 249","hasPhoto":"nao","photoShape":"","color":"preto","audience":"casal","notes":""},"250":{"id":250,"codigo":"250","titulo":"Modelo 250","hasPhoto":"nao","photoShape":"","color":"preto","audience":"casal","notes":""},"251":{"id":251,"codigo":"251","titulo":"Modelo 251","hasPhoto":"sim","photoShape":"coracao","color":"preto","audience":"casal","notes":""},"252":{"id":252,"codigo":"252","titulo":"Modelo 252","hasPhoto":"sim","photoShape":"coracao","color":"rosa","audience":"feminino","notes":""},"253":{"id":253,"codigo":"253","titulo":"Modelo 253","hasPhoto":"sim","photoShape":"coracao","color":"preto","audience":"casal","notes":""},"254":{"id":254,"codigo":"254","titulo":"Modelo 254","hasPhoto":"sim","photoShape":"coracao","color":"preto","audience":"casal","notes":""},"255":{"id":255,"codigo":"255","titulo":"Modelo 255","hasPhoto":"nao","photoShape":"","color":"azul","audience":"casal","notes":""},"256":{"id":256,"codigo":"256","titulo":"Modelo 256","hasPhoto":"nao","photoShape":"","color":"vermelho","audience":"casal","notes":""},"257":{"id":257,"codigo":"257","titulo":"Modelo 257","hasPhoto":"nao","photoShape":"","color":"outro","audience":"casal","notes":""},"258":{"id":258,"codigo":"258","titulo":"Modelo 258","hasPhoto":"nao","photoShape":"","color":"vermelho","audience":"casal","notes":""},"259":{"id":259,"codigo":"259","titulo":"Modelo 259","hasPhoto":"nao","photoShape":"","color":"azul","audience":"casal","notes":""},"260":{"id":260,"codigo":"260","titulo":"Modelo 260","hasPhoto":"nao","photoShape":"","color":"preto","audience":"casal","notes":""},"261":{"id":261,"codigo":"261","titulo":"Modelo 261","hasPhoto":"sim","photoShape":"coracao","color":"preto","audience":"casal","notes":""},"262":{"id":262,"codigo":"262","titulo":"Modelo 262","hasPhoto":"nao","photoShape":"","color":"branco","audience":"casal","notes":""},"263":{"id":263,"codigo":"263","titulo":"Modelo 263","hasPhoto":"nao","photoShape":"","color":"rosa","audience":"casal","notes":""},"264":{"id":264,"codigo":"264","titulo":"Modelo 264","hasPhoto":"nao","photoShape":"","color":"branco","audience":"casal","notes":""},"265":{"id":265,"codigo":"265","titulo":"Modelo 265","hasPhoto":"sim","photoShape":"retangulo","color":"azul","audience":"masculino","notes":""},"266":{"id":266,"codigo":"266","titulo":"Modelo 266","hasPhoto":"nao","photoShape":"","color":"outro","audience":"casal","notes":""},"267":{"id":267,"codigo":"267","titulo":"Modelo 267","hasPhoto":"nao","photoShape":"","color":"branco","audience":"casal","notes":""},"268":{"id":268,"codigo":"268","titulo":"Modelo 268","hasPhoto":"nao","photoShape":"","color":"branco","audience":"casal","notes":""},"269":{"id":269,"codigo":"269","titulo":"Modelo 269","hasPhoto":"nao","photoShape":"","color":"branco","audience":"casal","notes":""},"270":{"id":270,"codigo":"270","titulo":"Modelo 270","hasPhoto":"nao","photoShape":"","color":"outro","audience":"casal","notes":""},"271":{"id":271,"codigo":"271","titulo":"Modelo 271","hasPhoto":"nao","photoShape":"","color":"branco","audience":"casal","notes":""},"272":{"id":272,"codigo":"272","titulo":"Modelo 272","hasPhoto":"nao","photoShape":"","color":"rosa","audience":"casal","notes":""},"273":{"id":273,"codigo":"273","titulo":"Modelo 273","hasPhoto":"nao","photoShape":"","color":"rosa","audience":"feminino","notes":""},"274":{"id":274,"codigo":"274","titulo":"Modelo 274","hasPhoto":"sim","photoShape":"coracao","color":"rosa","audience":"feminino","notes":""},"275":{"id":275,"codigo":"275","titulo":"Modelo 275","hasPhoto":"sim","photoShape":"coracao","color":"rosa","audience":"feminino","notes":""},"276":{"id":276,"codigo":"276","titulo":"Modelo 276","hasPhoto":"sim","photoShape":"quadrado","color":"branco","audience":"casal","notes":""},"277":{"id":277,"codigo":"277","titulo":"Modelo 277","hasPhoto":"sim","photoShape":"quadrado","color":"bege","audience":"feminino","notes":""},"278":{"id":278,"codigo":"278","titulo":"Modelo 278","hasPhoto":"sim","photoShape":"quadrado","color":"preto","audience":"feminino","notes":""}};
+
+      const IMAGES_PER_MODEL = 4;
+      const INITIAL_VISIBLE = 24;
+      const LOAD_STEP = 24;
+
+      const grid = document.getElementById("ccGrid");
+      const searchInput = document.getElementById("ccSearchInput");
+      const sortSelect = document.getElementById("ccSortSelect");
+      const resultsInfo = document.getElementById("ccResultsInfo");
+      const loadMoreBtn = document.getElementById("ccLoadMore");
+      const emptyState = document.getElementById("ccEmpty");
+      const totalHero = document.getElementById("ccTotalHero");
+
+      const modal = document.getElementById("ccModal");
+      const modalClose = document.getElementById("ccModalClose");
+      const modalMainImage = document.getElementById("ccModalMainImage");
+      const modalThumbs = document.getElementById("ccModalThumbs");
+      const modalTitle = document.getElementById("ccModalTitle");
+      const whatsappLink = document.getElementById("ccWhatsappLink");
+      const copyCodeBtn = document.getElementById("ccCopyCode");
+
+      const filterPhoto = document.getElementById("ccFilterPhoto");
+      const filterShape = document.getElementById("ccFilterShape");
+      const filterColor = document.getElementById("ccFilterColor");
+      const filterAudience = document.getElementById("ccFilterAudience");
+      const clearFiltersBtn = document.getElementById("ccClearFilters");
+
+      const sellerNameInput = document.getElementById("ccSellerName");
+      const sellerCodeInput = document.getElementById("ccSellerCode");
+      const validateSellerBtn = document.getElementById("ccValidateSeller");
+      const sellerStatus = document.getElementById("ccSellerStatus");
+      const customerNameInput = document.getElementById("ccCustomerName");
+      const customerPhoneInput = document.getElementById("ccCustomerPhone");
+      const customerEmailInput = document.getElementById("ccCustomerEmail");
+      const deliveryDateInput = document.getElementById("ccDeliveryDate");
+
+      const hasNameInput = document.getElementById("ccHasName");
+      const mugNameInput = document.getElementById("ccMugName");
+      const hasPhotoInput = document.getElementById("ccHasPhoto");
+      const photoFileInput = document.getElementById("ccPhotoFile");
+      const photoPreview = document.getElementById("ccPhotoPreview");
+      const photoPreviewImg = document.getElementById("ccPhotoPreviewImg");
+      const photoFileName = document.getElementById("ccPhotoFileName");
+      const paymentMethodInput = document.getElementById("ccPaymentMethod");
+      const paymentStatusInput = document.getElementById("ccPaymentStatus");
+      const paymentNoteInput = document.getElementById("ccPaymentNote");
+      const orderNotesInput = document.getElementById("ccOrderNotes");
+      const quantityInput = document.getElementById("ccQuantity");
+      const urgencyInput = document.getElementById("ccUrgency");
+      const deliveryTypeInput = document.getElementById("ccDeliveryType");
+      const deliveryBox = document.getElementById("ccDeliveryBox");
+      const deliveryCepInput = document.getElementById("ccDeliveryCep");
+      const calculateDeliveryBtn = document.getElementById("ccCalculateDelivery");
+      const sellerBenefitInput = document.getElementById("ccSellerBenefit");
+      const deliveryFeeManualInput = document.getElementById("ccDeliveryFeeManual");
+      const deliveryResult = document.getElementById("ccDeliveryResult");
+      const deliveryConsultWhatsapp = document.getElementById("ccDeliveryConsultWhatsapp");
+      const deliveryFeeLine = document.getElementById("ccDeliveryFeeLine");
+      const couponCodeInput = document.getElementById("ccCouponCode");
+      const applyCouponBtn = document.getElementById("ccApplyCoupon");
+      const couponResult = document.getElementById("ccCouponResult");
+      const discountLine = document.getElementById("ccDiscountLine");
+      const commissionLine = document.getElementById("ccCommissionLine");
+      const crochetQtyInput = document.getElementById("ccCrochetQty");
+      const chocolateQtyInput = document.getElementById("ccChocolateQty");
+      const baseLineLabel = document.getElementById("ccBaseLine");
+      const crochetLineLabel = document.getElementById("ccCrochetLine");
+      const chocolateLineLabel = document.getElementById("ccChocolateLine");
+      const subtotalLabel = document.getElementById("ccSubtotal");
+      const orderAlert = document.getElementById("ccOrderAlert");
+      const addToCartBtn = document.getElementById("ccAddToCart");
+      const cartPanel = document.getElementById("ccCartPanel");
+      const cartToggle = document.getElementById("ccCartToggle");
+      const cartCount = document.getElementById("ccCartCount");
+      const cartList = document.getElementById("ccCartList");
+      const cartTotal = document.getElementById("ccCartTotal");
+      const cartWhatsappBtn = document.getElementById("ccCartWhatsapp");
+      const cartPdfBtn = document.getElementById("ccCartPdf");
+      const cartEmailBtn = document.getElementById("ccCartEmail");
+      const toast = document.getElementById("ccToast");
+
+      const bumpOverlay = document.getElementById("ccBumpOverlay");
+      const bumpClose = document.getElementById("ccBumpClose");
+      const bumpChocolate = document.getElementById("ccBumpChocolate");
+      const bumpCrochet = document.getElementById("ccBumpCrochet");
+      const bumpApply = document.getElementById("ccBumpApply");
+      const bumpSkip = document.getElementById("ccBumpSkip");
+      const submitOrderBtn = document.getElementById("ccSubmitOrder");
+      const orderStatus = document.getElementById("ccOrderStatus");
+
+      let visibleCount = INITIAL_VISIBLE;
+      let currentFilteredModels = [];
+      let currentModel = null;
+      let orderCart = [];
+      let pendingBumpItemUid = null;
+      let bumpSelectedChocolate = false;
+      let bumpSelectedCrochet = false;
+
+      if (totalHero) {
+        totalHero.textContent = TOTAL_MODELS;
+      }
+
+      const savedSellerName = localStorage.getItem("ccSellerName") || "";
+      if (sellerNameInput && savedSellerName) {
+        sellerNameInput.value = savedSellerName;
+      }
+
+      if (sellerNameInput) {
+        sellerNameInput.addEventListener("input", function () {
+          localStorage.setItem("ccSellerName", sellerNameInput.value.trim());
+        });
+      }
+
+      function padNumber(number) {
+        return String(number).padStart(3, "0");
+      }
+
+      function encodePathSegment(segment) {
+        return encodeURIComponent(segment).replace(/%2F/g, "/");
+      }
+
+      function buildImageUrl(modelNumber, imageNumber) {
+        const code = padNumber(modelNumber);
+        const folder = `Mockup (${modelNumber})`;
+        const file = `modelo-${code}-${imageNumber}.webp`;
+
+        return `${BASE_URL}${encodePathSegment(folder)}/${encodePathSegment(file)}?v=3`;
+      }
+
+      function createModels() {
+        const models = [];
+
+        for (let i = 1; i <= TOTAL_MODELS; i++) {
+          const code = padNumber(i);
+
+          models.push({
+            id: i,
+            code: code,
+            title: `Modelo ${code}`,
+            folder: `Mockup (${i})`,
+            collection: "Dia dos Namorados",
+            images: Array.from({ length: IMAGES_PER_MODEL }, function (_, index) {
+              return buildImageUrl(i, index + 1);
+            })
+          });
+        }
+
+        return models;
+      }
+
+      const allModels = createModels();
+
+      function getModelTag(modelId) {
+        return MODEL_TAGS[String(modelId)] || {};
+      }
+
+      function formatTagLabel(value) {
+        const labels = {
+          sim: "com foto",
+          nao: "sem foto",
+          nenhum: "sem foto",
+          coracao: "coração",
+          circulo: "círculo",
+          quadrado: "quadrado",
+          retangulo: "retângulo",
+          polaroid: "polaroid",
+          branco: "branco",
+          preto: "preto",
+          rosa: "rosa",
+          vermelho: "vermelho",
+          bege: "bege",
+          azul: "azul",
+          marrom: "marrom",
+          colorido: "colorido",
+          feminino: "feminino",
+          masculino: "masculino",
+          casal: "casal",
+          neutro: "neutro",
+          outro: "outro"
+        };
+
+        return labels[value] || value || "";
+      }
+
+      function getCardTagsHtml(model) {
+        const tag = getModelTag(model.id);
+        const pills = [];
+
+        if (tag.hasPhoto) pills.push({ label: formatTagLabel(tag.hasPhoto), photo: tag.hasPhoto === "sim" });
+        if (tag.photoShape && tag.photoShape !== "nenhum") pills.push({ label: formatTagLabel(tag.photoShape), photo: true });
+        if (tag.color) pills.push({ label: formatTagLabel(tag.color), photo: false });
+        if (tag.audience) pills.push({ label: formatTagLabel(tag.audience), photo: false });
+
+        if (!pills.length) return "";
+
+        return '<div class="cc-card-tags">' + pills.map(function (pill) {
+          return `<span class="cc-tag-pill${pill.photo ? " is-photo" : ""}">${pill.label}</span>`;
+        }).join("") + '</div>';
+      }
+
+
+      function getFilteredModels() {
+        const term = searchInput.value.trim().toLowerCase();
+        const cleanTerm = term.replace(/\D/g, "");
+        const sort = sortSelect.value;
+
+        const selectedPhoto = filterPhoto ? filterPhoto.value : "";
+        const selectedShape = filterShape ? filterShape.value : "";
+        const selectedColor = filterColor ? filterColor.value : "";
+        const selectedAudience = filterAudience ? filterAudience.value : "";
+
+        let models = allModels.filter(function (model) {
+          const numericId = String(model.id);
+          const code = model.code.toLowerCase();
+          const title = model.title.toLowerCase();
+          const tag = getModelTag(model.id);
+
+          const matchesSearch = !term || (
+            code.includes(term) ||
+            title.includes(term) ||
+            numericId.includes(cleanTerm) ||
+            code.includes(cleanTerm.padStart(3, "0"))
+          );
+
+          if (!matchesSearch) return false;
+          if (selectedPhoto && tag.hasPhoto !== selectedPhoto) return false;
+
+          if (selectedShape) {
+            if (selectedShape === "nenhum") {
+              if (tag.hasPhoto !== "nao" && tag.photoShape !== "nenhum" && tag.photoShape !== "") return false;
+            } else if (tag.photoShape !== selectedShape) {
+              return false;
+            }
+          }
+
+          if (selectedColor && tag.color !== selectedColor) return false;
+          if (selectedAudience && tag.audience !== selectedAudience) return false;
+
+          return true;
+        });
+
+        models.sort(function (a, b) {
+          return sort === "asc" ? a.id - b.id : b.id - a.id;
+        });
+
+        return models;
+      }
+
+      function imageErrorFallback(img) {
+        img.classList.add("cc-img-error");
+        img.alt = "Imagem não encontrada";
+      }
+
+      function renderGallery(resetVisible) {
+        if (resetVisible) {
+          visibleCount = INITIAL_VISIBLE;
+        }
+
+        currentFilteredModels = getFilteredModels();
+        const modelsToShow = currentFilteredModels.slice(0, visibleCount);
+
+        grid.innerHTML = "";
+
+        modelsToShow.forEach(function (model) {
+          const card = document.createElement("article");
+          card.className = "cc-card";
+
+          card.innerHTML = `
+            <div class="cc-img">
+              <div class="cc-badge">Modelo ${model.code}</div>
+              <img
+                src="${model.images[0]}"
+                alt="${model.title} - imagem principal"
+                loading="lazy"
+              >
+            </div>
+
+            <div class="cc-card-body">
+              <div class="cc-card-title">
+                <h3>${model.title}</h3>
+                <span>4 imagens</span>
+              </div>
+
+              <div class="cc-thumbs">
+                ${model.images.map(function (img, index) {
+                  return `
+                    <img
+                      src="${img}"
+                      alt="${model.title} - imagem ${index + 1}"
+                      loading="lazy"
+                    >
+                  `;
+                }).join("")}
+              </div>
+
+              ${getCardTagsHtml(model)}
+
+              <button class="cc-card-btn" type="button" data-model-id="${model.id}">
+                Ver modelo
+              </button>
+            </div>
+          `;
+
+          card.querySelectorAll("img").forEach(function (img) {
+            img.addEventListener("error", function () {
+              imageErrorFallback(img);
+            });
+          });
+
+          grid.appendChild(card);
+        });
+
+        updateResultsInfo();
+
+        emptyState.style.display = currentFilteredModels.length === 0 ? "block" : "none";
+        loadMoreBtn.style.display = visibleCount < currentFilteredModels.length ? "inline-flex" : "none";
+      }
+
+      function updateResultsInfo() {
+        const showing = Math.min(visibleCount, currentFilteredModels.length);
+        const total = currentFilteredModels.length;
+
+        if (total === 0) {
+          resultsInfo.textContent = "0 modelos encontrados";
+          return;
+        }
+
+        resultsInfo.textContent = `Mostrando ${showing} de ${total}`;
+      }
+
+      function openModal(modelId) {
+        const model = allModels.find(function (item) {
+          return item.id === Number(modelId);
+        });
+
+        if (!model) return;
+
+        currentModel = model;
+
+        modalTitle.textContent = model.title;
+        modalMainImage.src = model.images[0];
+        modalMainImage.alt = `${model.title} - imagem ampliada`;
+
+        modalMainImage.onerror = function () {
+          imageErrorFallback(modalMainImage);
+        };
+
+        modalThumbs.innerHTML = "";
+
+        model.images.forEach(function (img, index) {
+          const button = document.createElement("button");
+          button.type = "button";
+          button.className = index === 0 ? "is-active" : "";
+
+          button.innerHTML = `
+            <img src="${img}" alt="${model.title} - miniatura ${index + 1}">
+          `;
+
+          const thumbImg = button.querySelector("img");
+          thumbImg.addEventListener("error", function () {
+            imageErrorFallback(thumbImg);
+          });
+
+          button.addEventListener("click", function () {
+            modalMainImage.src = img;
+            modalMainImage.alt = `${model.title} - imagem ${index + 1}`;
+
+            modalThumbs.querySelectorAll("button").forEach(function (btn) {
+              btn.classList.remove("is-active");
+            });
+
+            button.classList.add("is-active");
+          });
+
+          modalThumbs.appendChild(button);
+        });
+
+        if (hasNameInput) hasNameInput.value = "Não";
+        if (mugNameInput) mugNameInput.value = "";
+        if (hasPhotoInput) hasPhotoInput.value = "Não";
+        if (photoFileInput) photoFileInput.value = "";
+        if (quantityInput) quantityInput.value = "1";
+        if (urgencyInput) urgencyInput.value = "Normal";
+        if (deliveryTypeInput) deliveryTypeInput.value = "Retirar no local";
+        if (deliveryCepInput) deliveryCepInput.value = "";
+        if (sellerBenefitInput) sellerBenefitInput.value = "Não";
+        if (deliveryFeeManualInput) deliveryFeeManualInput.value = "0";
+        calculatedDeliveryDistanceKm = null;
+        deliveryRequiresConsultation = false;
+        lastDeliveryCity = "";
+        lastDeliveryState = "";
+        appliedCoupon = null;
+        if (couponCodeInput) couponCodeInput.value = "";
+        if (couponResult) {
+          couponResult.className = "cc-coupon-result";
+          couponResult.innerHTML = 'Digite o cupom informado pela equipe para aplicar o desconto.';
+        }
+        updateDeliveryVisibility();
+        if (crochetQtyInput) crochetQtyInput.value = "0";
+        if (chocolateQtyInput) chocolateQtyInput.value = "0";
+        if (paymentMethodInput) paymentMethodInput.value = "Pix";
+        if (paymentStatusInput) paymentStatusInput.value = "Aguardando pagamento";
+        if (paymentNoteInput) paymentNoteInput.value = "";
+        if (orderNotesInput) orderNotesInput.value = "";
+        if (photoPreview) photoPreview.classList.remove("is-visible");
+        if (orderAlert) orderAlert.classList.remove("is-visible");
+        clearOrderStatus();
+        if (submitOrderBtn) {
+          submitOrderBtn.textContent = "Enviar pedido por e-mail";
+          submitOrderBtn.classList.remove("is-loading");
+        }
+
+        setPhotoFieldsVisibility();
+        updateSubtotal();
+        updateWhatsappLink();
+
+        modal.classList.add("is-open");
+        modal.setAttribute("aria-hidden", "false");
+        document.documentElement.style.overflow = "hidden";
+      }
+
+      function closeModal() {
+        modal.classList.remove("is-open");
+        modal.setAttribute("aria-hidden", "true");
+        document.documentElement.style.overflow = "";
+      }
+
+      function getSelectedPhotoName() {
+        if (!photoFileInput || !photoFileInput.files || !photoFileInput.files.length) {
+          return "";
+        }
+
+        return photoFileInput.files[0].name;
+      }
+
+      function formatBRL(value) {
+        return Number(value || 0).toLocaleString("pt-BR", {
+          style: "currency",
+          currency: "BRL"
+        });
+      }
+
+      function normalizeSellerCode(value) {
+        return String(value || "")
+          .trim()
+          .toUpperCase()
+          .replace(/\s+/g, "");
+      }
+
+      function showSellerStatus(type, message) {
+        if (!sellerStatus) return;
+
+        sellerStatus.className = "cc-seller-status is-visible";
+        sellerStatus.classList.add(type === "ok" ? "is-ok" : "is-error");
+        sellerStatus.textContent = message;
+      }
+
+      function validateSellerCode() {
+        const code = normalizeSellerCode(sellerCodeInput ? sellerCodeInput.value : "");
+        const seller = SELLER_CODES[code];
+
+        if (!code) {
+          validatedSeller = null;
+          if (sellerBenefitInput) sellerBenefitInput.value = "Não";
+          showSellerStatus("error", "Digite o código do vendedor para validar.");
+          updateDeliveryVisibility();
+          return false;
+        }
+
+        if (!seller) {
+          validatedSeller = null;
+          if (sellerBenefitInput) sellerBenefitInput.value = "Não";
+          showSellerStatus("error", "Código não encontrado. O atendimento seguirá como cliente comum.");
+          updateDeliveryVisibility();
+          return false;
+        }
+
+        validatedSeller = {
+          code: code,
+          name: seller.name,
+          freeShipping: !!seller.freeShipping
+        };
+
+        if (sellerNameInput && !sellerNameInput.value.trim()) {
+          sellerNameInput.value = seller.name;
+        }
+
+        if (sellerBenefitInput) {
+          sellerBenefitInput.value = validatedSeller.freeShipping ? "Sim" : "Não";
+        }
+
+        showSellerStatus(
+          "ok",
+          validatedSeller.freeShipping
+            ? `Vendedor validado: ${seller.name}. Frete grátis liberado para este atendimento.`
+            : `Vendedor validado: ${seller.name}. Sem benefício de frete grátis.`
+        );
+
+        updateDeliveryVisibility();
+        return true;
+      }
+
+      function clearSellerValidationIfCodeChanged() {
+        const code = normalizeSellerCode(sellerCodeInput ? sellerCodeInput.value : "");
+
+        if (validatedSeller && code === validatedSeller.code) {
+          return;
+        }
+
+        validatedSeller = null;
+
+        if (sellerBenefitInput) {
+          sellerBenefitInput.value = "Não";
+        }
+
+        if (sellerStatus) {
+          sellerStatus.className = "cc-seller-status";
+          sellerStatus.textContent = "Vendedor ainda não validado.";
+        }
+
+        updateDeliveryVisibility();
+      }
+
+      function normalizeText(value) {
+        return String(value || "")
+          .normalize("NFD")
+          .replace(/[\u0300-\u036f]/g, "")
+          .trim()
+          .toUpperCase();
+      }
+
+      function isAllowedLocalDelivery(city, state) {
+        const normalizedCity = normalizeText(city);
+        const normalizedState = normalizeText(state);
+
+        return normalizedState === "SC" && (
+          normalizedCity === "CAMBORIU" ||
+          normalizedCity === "BALNEARIO CAMBORIU"
+        );
+      }
+
+      function getSellerCommission(quantity) {
+        if (!validatedSeller) return 0;
+        return getSelectedQuantityFromValue(quantity) * COMMISSION_PER_MUG;
+      }
+
+      function getSelectedQuantityFromValue(value) {
+        const quantity = Number(value || 1);
+        return Number.isFinite(quantity) && quantity > 0 ? Math.floor(quantity) : 1;
+      }
+
+      function normalizeCouponCode(value) {
+        return String(value || "").trim().toUpperCase().replace(/\s+/g, "");
+      }
+
+      function getCouponDiscount(productSubtotal) {
+        if (!appliedCoupon) return 0;
+
+        if (appliedCoupon.type === "fixed") {
+          return Math.min(productSubtotal, Number(appliedCoupon.value || 0));
+        }
+
+        if (appliedCoupon.type === "percent") {
+          return Math.min(productSubtotal, productSubtotal * (Number(appliedCoupon.value || 0) / 100));
+        }
+
+        return 0;
+      }
+
+      function applyCouponCode() {
+        const code = normalizeCouponCode(couponCodeInput ? couponCodeInput.value : "");
+
+        if (!code) {
+          appliedCoupon = null;
+          if (couponResult) {
+            couponResult.className = "cc-coupon-result is-error";
+            couponResult.textContent = "Digite um cupom para aplicar.";
+          }
+          updateSubtotal();
+          return;
+        }
+
+        const coupon = COUPONS[code];
+
+        if (!coupon) {
+          appliedCoupon = null;
+          if (couponResult) {
+            couponResult.className = "cc-coupon-result is-error";
+            couponResult.textContent = "Cupom não encontrado ou indisponível.";
+          }
+          updateSubtotal();
+          return;
+        }
+
+        appliedCoupon = {
+          code: code,
+          type: coupon.type,
+          value: coupon.value,
+          label: coupon.label || "Cupom aplicado."
+        };
+
+        if (couponResult) {
+          couponResult.className = "cc-coupon-result is-ok";
+          couponResult.textContent = appliedCoupon.label;
+        }
+
+        updateSubtotal();
+      }
+
+      function getCouponLabel() {
+        return appliedCoupon ? appliedCoupon.code : "";
+      }
+
+      function onlyDigits(value) {
+        return String(value || "").replace(/\D/g, "");
+      }
+
+      function formatCep(value) {
+        const digits = onlyDigits(value).slice(0, 8);
+        if (digits.length <= 5) return digits;
+        return digits.slice(0, 5) + "-" + digits.slice(5);
+      }
+
+      function haversineDistanceKm(lat1, lon1, lat2, lon2) {
+        const R = 6371;
+        const toRad = function (value) { return value * Math.PI / 180; };
+        const dLat = toRad(lat2 - lat1);
+        const dLon = toRad(lon2 - lon1);
+        const a =
+          Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+          Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) *
+          Math.sin(dLon / 2) * Math.sin(dLon / 2);
+
+        return R * (2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a)));
+      }
+
+      async function fetchCepCoordinates(cep) {
+        const cleanCep = onlyDigits(cep);
+        const response = await fetch(`https://brasilapi.com.br/api/cep/v2/${cleanCep}`);
+
+        if (!response.ok) {
+          throw new Error("CEP não encontrado.");
+        }
+
+        const data = await response.json();
+        const coords = data && data.location && data.location.coordinates ? data.location.coordinates : null;
+
+        if (!coords || coords.latitude === undefined || coords.longitude === undefined) {
+          throw new Error("Esse CEP não retornou coordenadas.");
+        }
+
+        return {
+          latitude: Number(coords.latitude),
+          longitude: Number(coords.longitude),
+          city: data.city || "",
+          state: data.state || "",
+          neighborhood: data.neighborhood || "",
+          street: data.street || ""
+        };
+      }
+
+      function getDeliveryFee() {
+        if (!deliveryTypeInput || deliveryTypeInput.value !== "Entrega") return 0;
+        if (deliveryRequiresConsultation) return 0;
+        if (validatedSeller && validatedSeller.freeShipping) return 0;
+        if (sellerBenefitInput && sellerBenefitInput.value === "Sim") return 0;
+        return Number(calculatedDeliveryFee || 0);
+      }
+
+      function updateDeliveryVisibility() {
+        const isDelivery = deliveryTypeInput && deliveryTypeInput.value === "Entrega";
+
+        if (deliveryBox) {
+          deliveryBox.classList.toggle("is-hidden", !isDelivery);
+        }
+
+        if (!isDelivery) {
+          setDeliveryFeeValue(0);
+          if (sellerBenefitInput) sellerBenefitInput.value = "Não";
+          if (deliveryCepInput) deliveryCepInput.value = "";
+          calculatedDeliveryDistanceKm = null;
+          deliveryRequiresConsultation = false;
+          lastDeliveryCity = "";
+          lastDeliveryState = "";
+          if (deliveryConsultWhatsapp) {
+            deliveryConsultWhatsapp.classList.remove("is-visible");
+            deliveryConsultWhatsapp.href = "#";
+          }
+          if (deliveryResult) {
+            deliveryResult.innerHTML = "Retirada no local selecionada. Nenhuma taxa de entrega aplicada.";
+          }
+        } else if (validatedSeller && validatedSeller.freeShipping) {
+          deliveryRequiresConsultation = false;
+          if (deliveryConsultWhatsapp) {
+            deliveryConsultWhatsapp.classList.remove("is-visible");
+            deliveryConsultWhatsapp.href = "#";
+          }
+          setDeliveryFeeValue(0);
+          if (sellerBenefitInput) sellerBenefitInput.value = "Sim";
+          if (deliveryResult) {
+            deliveryResult.innerHTML = `Vendedor validado (${validatedSeller.name}): <strong>frete grátis</strong> aplicado.`;
+          }
+        } else if (deliveryResult && (!deliveryCepInput || !deliveryCepInput.value)) {
+          deliveryResult.innerHTML = "Informe o CEP do cliente para calcular a entrega. Até 2,5 km: <strong>R$ 5</strong>. Acima de 2,5 km: <strong>R$ 10</strong>.";
+        }
+
+        updateSubtotal();
+      }
+
+      function setDeliveryFeeValue(fee) {
+        calculatedDeliveryFee = Number(fee || 0);
+
+        if (deliveryFeeManualInput) {
+          deliveryFeeManualInput.value = formatBRL(calculatedDeliveryFee);
+        }
+      }
+
+      function isProbablyLocalCep(cep) {
+        const cleanCep = onlyDigits(cep);
+        return cleanCep.startsWith("8833") || cleanCep.startsWith("8834");
+      }
+
+      function setDeliveryConsultation(cep, addressText) {
+        deliveryRequiresConsultation = true;
+        calculatedDeliveryDistanceKm = null;
+        setDeliveryFeeValue(0);
+
+        const consultMessage = [
+          "Olá! Preciso consultar taxa de entrega/envio para uma caneca personalizada.",
+          "",
+          cep ? `CEP do cliente: ${formatCep(cep)}` : "",
+          addressText ? `Endereço aproximado: ${addressText}` : "",
+          "Pode me informar a taxa de entrega ou forma de envio?"
+        ].filter(Boolean).join("\n");
+
+        if (deliveryConsultWhatsapp) {
+          deliveryConsultWhatsapp.href = `https://wa.me/${SHIPPING_CONSULT_WHATSAPP}?text=${encodeURIComponent(consultMessage)}`;
+          deliveryConsultWhatsapp.classList.add("is-visible");
+        }
+
+        if (deliveryResult) {
+          deliveryResult.innerHTML = `
+            CEP: ${cep ? formatCep(cep) : "não informado"}${addressText ? " — " + addressText : ""}.<br>
+            Este CEP não é de Camboriú ou Balneário Camboriú/SC ou não pôde ser calculado automaticamente. <strong>Consultar taxa de entrega e formas de envio.</strong>
+          `;
+        }
+
+        updateSubtotal();
+      }
+
+      async function calculateDeliveryByCep() {
+        if (!deliveryCepInput) return;
+
+        const cep = onlyDigits(deliveryCepInput.value);
+
+        if (cep.length !== 8) {
+          setDeliveryFeeValue(0);
+          if (deliveryResult) deliveryResult.innerHTML = "Digite um CEP válido com 8 números.";
+          updateSubtotal();
+          return;
+        }
+
+        if (validatedSeller && validatedSeller.freeShipping) {
+          deliveryRequiresConsultation = false;
+          calculatedDeliveryDistanceKm = null;
+          setDeliveryFeeValue(0);
+
+          if (sellerBenefitInput) sellerBenefitInput.value = "Sim";
+          if (deliveryConsultWhatsapp) {
+            deliveryConsultWhatsapp.classList.remove("is-visible");
+            deliveryConsultWhatsapp.href = "#";
+          }
+          if (deliveryResult) deliveryResult.innerHTML = `Vendedor validado (${validatedSeller.name}): <strong>frete grátis</strong> aplicado.`;
+          updateSubtotal();
+          return;
+        }
+
+        if (deliveryResult) {
+          deliveryResult.innerHTML = "Calculando entrega automaticamente pelo CEP...";
+        }
+
+        try {
+          const destination = await fetchCepCoordinates(cep);
+
+          lastDeliveryCity = destination.city || "";
+          lastDeliveryState = destination.state || "";
+
+          const addressText = [destination.street, destination.neighborhood, destination.city, destination.state]
+            .filter(Boolean)
+            .join(", ");
+
+          if (!isAllowedLocalDelivery(destination.city, destination.state)) {
+            setDeliveryConsultation(cep, addressText);
+            return;
+          }
+
+          let distance = null;
+
+          try {
+            const origin = await fetchCepCoordinates("88348429");
+
+            distance = haversineDistanceKm(
+              origin.latitude,
+              origin.longitude,
+              destination.latitude,
+              destination.longitude
+            );
+          } catch (distanceError) {
+            distance = null;
+          }
+
+          deliveryRequiresConsultation = false;
+
+          if (deliveryConsultWhatsapp) {
+            deliveryConsultWhatsapp.classList.remove("is-visible");
+            deliveryConsultWhatsapp.href = "#";
+          }
+
+          let fee;
+
+          if (distance !== null && Number.isFinite(distance)) {
+            calculatedDeliveryDistanceKm = distance;
+            fee = distance <= 2.5 ? 5 : 10;
+
+            if (deliveryResult) {
+              deliveryResult.innerHTML = `
+                CEP do cliente: ${formatCep(cep)}${addressText ? " — " + addressText : ""}.<br>
+                Distância aproximada do CEP base 88348429: <strong>${distance.toFixed(1).replace(".", ",")} km</strong>.<br>
+                Regra aplicada: ${distance <= 2.5 ? "até 2,5 km" : "acima de 2,5 km"} dentro de Camboriú/Balneário Camboriú.<br>
+                Taxa de entrega: <strong>${formatBRL(fee)}</strong>.
+              `;
+            }
+          } else {
+            /*
+              Plano B: alguns CEPs não retornam coordenadas confiáveis.
+              Se for Camboriú/Balneário Camboriú, ainda assim calculamos automaticamente pela regra segura:
+              CEP local, mas sem coordenada => R$ 10.
+              Isso evita deixar o vendedor preso no dropdown/manual.
+            */
+            calculatedDeliveryDistanceKm = null;
+            fee = 10;
+
+            if (deliveryResult) {
+              deliveryResult.innerHTML = `
+                CEP do cliente: ${formatCep(cep)}${addressText ? " — " + addressText : ""}.<br>
+                CEP local de Camboriú/Balneário Camboriú, mas sem coordenada precisa disponível.<br>
+                Taxa automática aplicada por segurança: <strong>${formatBRL(fee)}</strong>.
+              `;
+            }
+          }
+
+          setDeliveryFeeValue(fee);
+          updateSubtotal();
+
+        } catch (error) {
+          console.error(error);
+
+          /*
+            Se a API falhar, ainda tentamos uma regra mínima por faixa.
+            CEPs 8833/8834 costumam ser da região. Aplicamos R$ 10 como fallback local.
+            Demais CEPs: consulta obrigatória.
+          */
+          lastDeliveryCity = "";
+          lastDeliveryState = "";
+
+          if (isProbablyLocalCep(cep)) {
+            deliveryRequiresConsultation = false;
+            calculatedDeliveryDistanceKm = null;
+            setDeliveryFeeValue(10);
+
+            if (deliveryConsultWhatsapp) {
+              deliveryConsultWhatsapp.classList.remove("is-visible");
+              deliveryConsultWhatsapp.href = "#";
+            }
+
+            if (deliveryResult) {
+              deliveryResult.innerHTML = `
+                Não consegui consultar a API do CEP agora, mas o CEP informado parece ser da região.<br>
+                Taxa automática aplicada por segurança: <strong>R$ 10,00</strong>.
+              `;
+            }
+
+            updateSubtotal();
+            return;
+          }
+
+          setDeliveryConsultation(cep, "");
+        }
+      }
+
+      function getSelectedQuantity() {
+        const quantity = Number(quantityInput ? quantityInput.value : 1);
+        return Number.isFinite(quantity) && quantity > 0 ? Math.floor(quantity) : 1;
+      }
+
+      function clampAddonQuantity(input) {
+        const max = getSelectedQuantity();
+        const raw = Number(input ? input.value : 0);
+        const value = Number.isFinite(raw) ? Math.floor(raw) : 0;
+        const clamped = Math.max(0, Math.min(max, value));
+
+        if (input && String(input.value) !== String(clamped)) {
+          input.value = clamped;
+        }
+
+        return clamped;
+      }
+
+      function getCrochetQty() {
+        return clampAddonQuantity(crochetQtyInput);
+      }
+
+      function getChocolateQty() {
+        return clampAddonQuantity(chocolateQtyInput);
+      }
+
+      function getBaseUnitPrice() {
+        return 30;
+      }
+
+      function getAddonPrice() {
+        return 6;
+      }
+
+      function getSelectedSubtotal() {
+        const quantity = getSelectedQuantity();
+        const crochetQty = getCrochetQty();
+        const chocolateQty = getChocolateQty();
+
+        return (quantity * getBaseUnitPrice()) + (crochetQty * getAddonPrice()) + (chocolateQty * getAddonPrice());
+      }
+
+      function getCompositionSummary() {
+        const quantity = getSelectedQuantity();
+        const crochetQty = getCrochetQty();
+        const chocolateQty = getChocolateQty();
+        const parts = [`${quantity} caneca(s) personalizada(s)`];
+
+        if (crochetQty > 0) {
+          parts.push(`${crochetQty} com suporte premium em crochê`);
+        }
+
+        if (chocolateQty > 0) {
+          parts.push(`${chocolateQty} com chocolates Sonho de Valsa`);
+        }
+
+        return parts.join(" + ");
+      }
+
+      function updateSubtotal() {
+        const quantity = getSelectedQuantity();
+        const crochetQty = getCrochetQty();
+        const chocolateQty = getChocolateQty();
+        const subtotal = getSelectedSubtotal();
+        const deliveryFee = getDeliveryFee();
+        const discount = getCouponDiscount(subtotal);
+        const commission = getSellerCommission(quantity);
+
+        if (quantityInput && String(quantityInput.value) !== String(quantity)) {
+          quantityInput.value = quantity;
+        }
+
+        if (baseLineLabel) baseLineLabel.textContent = `${quantity} × ${formatBRL(getBaseUnitPrice())}`;
+        if (crochetLineLabel) crochetLineLabel.textContent = `${crochetQty} × ${formatBRL(getAddonPrice())}`;
+        if (chocolateLineLabel) chocolateLineLabel.textContent = `${chocolateQty} × ${formatBRL(getAddonPrice())}`;
+        if (discountLine) discountLine.textContent = discount > 0 ? "- " + formatBRL(discount) : formatBRL(0);
+        if (commissionLine) commissionLine.textContent = formatBRL(commission);
+        if (deliveryFeeLine) deliveryFeeLine.textContent = deliveryRequiresConsultation ? "Consultar" : formatBRL(deliveryFee);
+        if (subtotalLabel) subtotalLabel.textContent = deliveryRequiresConsultation ? formatBRL(Math.max(0, subtotal - discount)) + " + entrega" : formatBRL(Math.max(0, subtotal - discount) + deliveryFee);
+
+        updateWhatsappLink();
+      }
+
+      function getOrderSummary() {
+        if (!currentModel) return "";
+
+        const seller = sellerNameInput ? sellerNameInput.value.trim() : "";
+        const sellerCode = validatedSeller ? validatedSeller.code : normalizeSellerCode(sellerCodeInput ? sellerCodeInput.value : "");
+        const sellerValidated = validatedSeller ? "Sim" : "Não";
+        const customer = customerNameInput ? customerNameInput.value.trim() : "";
+        const customerPhone = customerPhoneInput ? customerPhoneInput.value.trim() : "";
+        const customerEmail = customerEmailInput ? customerEmailInput.value.trim() : "";
+        const deliveryDate = deliveryDateInput ? deliveryDateInput.value : "";
+        const hasName = hasNameInput ? hasNameInput.value : "Não";
+        const mugName = mugNameInput ? mugNameInput.value.trim() : "";
+        const hasPhoto = hasPhotoInput ? hasPhotoInput.value : "Não";
+        const photoName = getSelectedPhotoName();
+        const quantity = getSelectedQuantity();
+        const urgency = urgencyInput ? urgencyInput.value : "Normal";
+        const deliveryType = deliveryTypeInput ? deliveryTypeInput.value : "Retirar no local";
+        const deliveryCep = deliveryCepInput ? deliveryCepInput.value.trim() : "";
+        const sellerBenefit = sellerBenefitInput ? sellerBenefitInput.value : "Não";
+        const deliveryFee = getDeliveryFee();
+        const deliveryConsult = deliveryRequiresConsultation ? "Sim" : "Não";
+        const crochetQty = getCrochetQty();
+        const chocolateQty = getChocolateQty();
+        const packageName = getCompositionSummary();
+        const unitPrice = getBaseUnitPrice();
+        const subtotal = getSelectedSubtotal();
+        const discount = getCouponDiscount(subtotal);
+        const totalFinal = Math.max(0, subtotal - discount) + deliveryFee;
+        const commission = getSellerCommission(quantity);
+        const couponCode = getCouponLabel();
+        const paymentMethod = paymentMethodInput ? paymentMethodInput.value : "Pix";
+        const paymentStatus = paymentStatusInput ? paymentStatusInput.value : "Aguardando pagamento";
+        const paymentNote = paymentNoteInput ? paymentNoteInput.value.trim() : "";
+        const notes = orderNotesInput ? orderNotesInput.value.trim() : "";
+
+        const lines = [
+          "NOVO PEDIDO - STUDIO CAFÉ CANECA",
+          "",
+          `Modelo: ${currentModel.title}`,
+          "Coleção: Dia dos Namorados",
+          "",
+          `Vendedor: ${seller || "Venda direta / não informado"}`,
+          `Código do vendedor: ${sellerCode || "Não informado"}`,
+          `Vendedor validado: ${sellerValidated}`,
+          `Código do vendedor: ${sellerCode || "Não informado"}`,
+          `Vendedor validado: ${sellerValidated}`,
+          `Cliente: ${customer || "Não informado"}`,
+          `WhatsApp do cliente: ${customerPhone || "Não informado"}`,
+          `E-mail do cliente: ${customerEmail || "Não informado"}`,
+          `Data de entrega: ${deliveryDate || "Não informada"}`,
+          `Urgência: ${urgency}`,
+          `Entrega ou retirada: ${deliveryType}`,
+          deliveryType === "Entrega" ? `CEP de entrega: ${deliveryCep || "Não informado"}` : "",
+          deliveryType === "Entrega" ? `Benefício vendedor/parceiro: ${sellerBenefit}` : "",
+          deliveryType === "Entrega" ? `Cidade entrega: ${lastDeliveryCity || "Não consultada"} / ${lastDeliveryState || ""}` : "",
+          deliveryType === "Entrega" && calculatedDeliveryDistanceKm !== null ? `Distância aproximada: ${calculatedDeliveryDistanceKm.toFixed(1).replace(".", ",")} km` : "",
+          deliveryType === "Entrega" ? `Consultar entrega/envio fora da região: ${deliveryConsult}` : "",
+          deliveryRequiresConsultation ? "Taxa de entrega: consultar" : `Taxa de entrega: ${formatBRL(deliveryFee)}`,
+          "",
+          `Quantidade de canecas: ${quantity}`,
+          `Composição: ${packageName}`,
+          `Canecas com suporte em crochê: ${crochetQty}`,
+          `Canecas com chocolates Sonho de Valsa: ${chocolateQty}`,
+          `Valor da caneca: ${formatBRL(unitPrice)}`,
+          `Valor de cada adicional: ${formatBRL(getAddonPrice())}`,
+          `Subtotal dos produtos: ${formatBRL(subtotal)}`,
+          `Cupom aplicado: ${couponCode || "Nenhum"}`,
+          `Desconto: ${formatBRL(discount)}`,
+          deliveryRequiresConsultation ? `Total parcial: ${formatBRL(Math.max(0, subtotal - discount))} + entrega a consultar` : `Total com entrega: ${formatBRL(totalFinal)}`,
+          `Comissão prevista: ${formatBRL(commission)}`,
+          "",
+          `Vai com nome?: ${hasName}`,
+          `Nome na caneca: ${mugName || "Não informado"}`,
+          currentModel && modelAcceptsPhoto(currentModel) ? `Precisa inserir foto?: ${hasPhoto}` : "Foto: este modelo não possui campo de foto",
+          currentModel && modelAcceptsPhoto(currentModel) ? `Foto selecionada: ${photoName || "Nenhuma foto selecionada"}` : "",
+          "",
+          `Forma de pagamento preferida: ${paymentMethod}`,
+          `Status do pagamento: ${paymentStatus}`,
+          `Observação de pagamento: ${paymentNote || "Sem observações de pagamento"}`,
+          `Observações: ${notes || "Sem observações"}`
+        ];
+
+        if (hasPhoto === "Sim" || photoName) {
+          lines.push("");
+          lines.push("ATENÇÃO: a foto foi selecionada no navegador, mas precisa ser enviada manualmente no WhatsApp.");
+        }
+
+        return lines.join("\\n");
+      }
+
+      function showOrderStatus(type, message) {
+        if (!orderStatus) return;
+
+        orderStatus.className = "cc-order-status is-visible";
+        orderStatus.classList.add(type === "success" ? "is-success" : "is-error");
+        orderStatus.textContent = message;
+      }
+
+      function clearOrderStatus() {
+        if (!orderStatus) return;
+        orderStatus.className = "cc-order-status";
+        orderStatus.textContent = "";
+      }
+
+      function buildOrderFormData() {
+        const formData = new FormData();
+        const orderId = "CCN-" + new Date().toISOString().replace(/[-:.TZ]/g, "").slice(0, 14);
+
+        formData.append("pedido_id", orderId);
+        formData.append("origem", "Página Catálogo Dia dos Namorados");
+        formData.append("colecao", "Dia dos Namorados");
+
+        formData.append("modelo_id", currentModel ? String(currentModel.id) : "");
+        formData.append("modelo_codigo", currentModel ? currentModel.code : "");
+        formData.append("modelo_titulo", currentModel ? currentModel.title : "");
+
+        const currentTag = currentModel ? getModelTag(currentModel.id) : {};
+        formData.append("modelo_tem_foto", currentTag.hasPhoto || "");
+        formData.append("modelo_formato_foto", currentTag.photoShape || "");
+        formData.append("modelo_cor", currentTag.color || "");
+        formData.append("modelo_perfil", currentTag.audience || "");
+
+        if (currentModel && currentModel.images) {
+          currentModel.images.forEach(function (url, index) {
+            formData.append("imagem_modelo_" + (index + 1), url);
+          });
+        }
+
+        formData.append("vendedor", sellerNameInput ? sellerNameInput.value.trim() : "");
+        formData.append("codigo_vendedor", validatedSeller ? validatedSeller.code : normalizeSellerCode(sellerCodeInput ? sellerCodeInput.value : ""));
+        formData.append("vendedor_validado", validatedSeller ? "Sim" : "Não");
+        formData.append("frete_gratis_vendedor", validatedSeller && validatedSeller.freeShipping ? "Sim" : "Não");
+        formData.append("codigo_vendedor", validatedSeller ? validatedSeller.code : normalizeSellerCode(sellerCodeInput ? sellerCodeInput.value : ""));
+        formData.append("vendedor_validado", validatedSeller ? "Sim" : "Não");
+        formData.append("frete_gratis_vendedor", validatedSeller && validatedSeller.freeShipping ? "Sim" : "Não");
+        formData.append("cliente", customerNameInput ? customerNameInput.value.trim() : "");
+        formData.append("whatsapp_cliente", customerPhoneInput ? customerPhoneInput.value.trim() : "");
+        formData.append("email_cliente", customerEmailInput ? customerEmailInput.value.trim() : "");
+        formData.append("email_cliente", customerEmailInput ? customerEmailInput.value.trim() : "");
+        formData.append("data_entrega", deliveryDateInput ? deliveryDateInput.value : "");
+        formData.append("urgencia", urgencyInput ? urgencyInput.value : "Normal");
+        formData.append("tipo_entrega", deliveryTypeInput ? deliveryTypeInput.value : "Retirar no local");
+        formData.append("cep_entrega", deliveryCepInput ? deliveryCepInput.value.trim() : "");
+        formData.append("beneficio_vendedor", sellerBenefitInput ? sellerBenefitInput.value : "Não");
+        formData.append("cidade_entrega", lastDeliveryCity || "");
+        formData.append("estado_entrega", lastDeliveryState || "");
+        formData.append("entrega_requer_consulta", deliveryRequiresConsultation ? "Sim" : "Não");
+        formData.append("distancia_entrega_km", calculatedDeliveryDistanceKm !== null ? String(calculatedDeliveryDistanceKm.toFixed(2)) : "");
+        formData.append("taxa_entrega", deliveryRequiresConsultation ? "consultar" : String(getDeliveryFee()));
+        formData.append("taxa_entrega_formatada", deliveryRequiresConsultation ? "Consultar" : formatBRL(getDeliveryFee()));
+        formData.append("quantidade", String(getSelectedQuantity()));
+        formData.append("composicao_caneca", getCompositionSummary());
+        formData.append("quantidade_suporte_croche", String(getCrochetQty()));
+        formData.append("quantidade_chocolates", String(getChocolateQty()));
+        formData.append("valor_caneca", String(getBaseUnitPrice()));
+        formData.append("valor_adicional_unitario", String(getAddonPrice()));
+        const productSubtotalForForm = getSelectedSubtotal();
+        const discountForForm = getCouponDiscount(productSubtotalForForm);
+        const totalForForm = Math.max(0, productSubtotalForForm - discountForForm) + getDeliveryFee();
+
+        formData.append("subtotal_produtos", String(productSubtotalForForm));
+        formData.append("subtotal_produtos_formatado", formatBRL(productSubtotalForForm));
+        formData.append("cupom", getCouponLabel());
+        formData.append("desconto", String(discountForForm));
+        formData.append("desconto_formatado", formatBRL(discountForForm));
+        formData.append("comissao_vendedor", String(getSellerCommission(getSelectedQuantity())));
+        formData.append("comissao_vendedor_formatada", formatBRL(getSellerCommission(getSelectedQuantity())));
+        formData.append("total_com_entrega", deliveryRequiresConsultation ? "consultar_entrega" : String(totalForForm));
+        formData.append("total_com_entrega_formatado", deliveryRequiresConsultation ? formatBRL(Math.max(0, productSubtotalForForm - discountForForm)) + " + entrega a consultar" : formatBRL(totalForForm));
+
+        formData.append("vai_com_nome", hasNameInput ? hasNameInput.value : "Não");
+        formData.append("nome_na_caneca", mugNameInput ? mugNameInput.value.trim() : "");
+        formData.append("precisa_foto", hasPhotoInput ? hasPhotoInput.value : "Não");
+        formData.append("forma_pagamento", paymentMethodInput ? paymentMethodInput.value : "Pix");
+        formData.append("status_pagamento", paymentStatusInput ? paymentStatusInput.value : "Aguardando pagamento");
+        formData.append("observacao_pagamento", paymentNoteInput ? paymentNoteInput.value.trim() : "");
+        formData.append("observacoes", orderNotesInput ? orderNotesInput.value.trim() : "");
+        formData.append("resumo_pedido", getOrderSummary());
+
+        if (photoFileInput && photoFileInput.files && photoFileInput.files[0]) {
+          formData.append("foto_cliente", photoFileInput.files[0], photoFileInput.files[0].name);
+        }
+
+        return formData;
+      }
+
+      async function submitOrderByEmail() {
+        clearOrderStatus();
+
+        if (!validateOrderBeforeWhatsapp()) {
+          showOrderStatus("error", "Revise os dados obrigatórios antes de enviar o pedido.");
+          return;
+        }
+
+        if (!ORDER_WEBHOOK_URL || ORDER_WEBHOOK_URL.includes("SEU-WEBHOOK")) {
+          showOrderStatus("error", "Configure a URL do webhook antes de enviar o pedido.");
+          return;
+        }
+
+        submitOrderBtn.classList.add("is-loading");
+        submitOrderBtn.textContent = "Enviando pedido...";
+
+        try {
+          await fetch(ORDER_WEBHOOK_URL, {
+            method: "POST",
+            mode: "no-cors",
+            body: buildOrderFormData()
+          });
+
+          showOrderStatus("success", "Pedido enviado com sucesso para os e-mails cadastrados.");
+          submitOrderBtn.textContent = "Pedido enviado";
+
+          setTimeout(function () {
+            submitOrderBtn.textContent = "Enviar pedido por e-mail";
+            submitOrderBtn.classList.remove("is-loading");
+          }, 1800);
+
+        } catch (error) {
+          console.error(error);
+          showOrderStatus("error", "Não foi possível confirmar o envio agora. Baixe o PDF e verifique o n8n.");
+          submitOrderBtn.textContent = "Enviar pedido por e-mail";
+          submitOrderBtn.classList.remove("is-loading");
+        }
+      }
+
+      function validateOrderBeforeWhatsapp() {
+        const missing = [];
+
+        if (!currentModel) missing.push("modelo");
+        if (!customerNameInput.value.trim()) missing.push("nome do cliente");
+        if (!customerEmailInput.value.trim()) missing.push("e-mail do cliente");
+        if (!deliveryDateInput.value) missing.push("data de entrega");
+
+        if (hasNameInput.value === "Sim" && !mugNameInput.value.trim()) {
+          missing.push("nome que vai na caneca");
+        }
+
+        if (currentModel && !modelAcceptsPhoto(currentModel)) {
+          if (hasPhotoInput) hasPhotoInput.value = "Não";
+          if (photoFileInput && photoFileInput.files && photoFileInput.files.length) {
+            missing.push("este modelo não aceita foto");
+          }
+        }
+
+        if (currentModel && modelAcceptsPhoto(currentModel) && hasPhotoInput.value === "Sim" && (!photoFileInput.files || !photoFileInput.files.length)) {
+          missing.push("foto do cliente");
+        }
+
+        if (missing.length) {
+          orderAlert.textContent = "Preencha: " + missing.join(", ") + ".";
+          orderAlert.classList.add("is-visible");
+          return false;
+        }
+
+        orderAlert.classList.remove("is-visible");
+        return true;
+      }
+
+      function updateWhatsappLink() {
+        if (!currentModel || !whatsappLink) return;
+
+        const summary = getOrderSummary();
+        whatsappLink.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(summary)}`;
+      }
+
+      function showToast(message) {
+        if (!toast) return;
+
+        toast.textContent = message;
+        toast.classList.add("is-visible");
+
+        clearTimeout(showToast._timer);
+        showToast._timer = setTimeout(function () {
+          toast.classList.remove("is-visible");
+        }, 2400);
+      }
+
+      function downloadTextFallback(filename, content) {
+        const blob = new Blob([content], { type: "text/plain;charset=utf-8" });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = filename;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+      }
+
+      function loadJsPDF() {
+        return new Promise(function (resolve, reject) {
+          if (window.jspdf && window.jspdf.jsPDF) {
+            resolve(window.jspdf.jsPDF);
+            return;
+          }
+
+          const script = document.createElement("script");
+          script.src = "https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js";
+          script.onload = function () {
+            if (window.jspdf && window.jspdf.jsPDF) {
+              resolve(window.jspdf.jsPDF);
+            } else {
+              reject(new Error("jsPDF não carregou."));
+            }
+          };
+          script.onerror = reject;
+          document.head.appendChild(script);
+        });
+      }
+
+      async function downloadPdfFromText(filename, title, text) {
+        try {
+          const jsPDF = await loadJsPDF();
+          const doc = new jsPDF({ unit: "pt", format: "a4" });
+
+          const margin = 42;
+          const pageWidth = doc.internal.pageSize.getWidth();
+          const pageHeight = doc.internal.pageSize.getHeight();
+          let y = 46;
+
+          doc.setFont("helvetica", "bold");
+          doc.setFontSize(17);
+          doc.text(title, margin, y);
+          y += 26;
+
+          doc.setFont("helvetica", "normal");
+          doc.setFontSize(10);
+
+          const lines = doc.splitTextToSize(text, pageWidth - margin * 2);
+
+          lines.forEach(function (line) {
+            if (y > pageHeight - 42) {
+              doc.addPage();
+              y = 42;
+            }
+
+            doc.text(line, margin, y);
+            y += 14;
+          });
+
+          doc.save(filename);
+
+        } catch (error) {
+          downloadTextFallback(filename.replace(".pdf", ".txt"), text);
+        }
+      }
+
+      function copyCurrentCode() {
+        if (!currentModel) return;
+
+        const summary = getOrderSummary();
+        const filename = `pedido-${currentModel.code}-cafe-caneca.pdf`;
+
+        downloadPdfFromText(filename, "Pedido Studio Café Caneca", summary);
+
+        copyCodeBtn.textContent = "PDF gerado";
+        setTimeout(function () {
+          copyCodeBtn.textContent = "Baixar PDF do pedido";
+        }, 1600);
+      }
+
+
+      function modelAcceptsPhoto(model) {
+        const tag = getModelTag(model.id);
+        return tag && tag.hasPhoto === "sim";
+      }
+
+      function setPhotoFieldsVisibility() {
+        if (!currentModel) return;
+
+        const acceptsPhoto = modelAcceptsPhoto(currentModel);
+        const photoSelectField = hasPhotoInput ? hasPhotoInput.closest(".cc-field") : null;
+        const photoFileField = photoFileInput ? photoFileInput.closest(".cc-field") : null;
+
+        [photoSelectField, photoFileField, photoPreview].forEach(function (el) {
+          if (!el) return;
+          el.classList.toggle("cc-hidden-by-model", !acceptsPhoto);
+        });
+
+        if (!acceptsPhoto) {
+          if (hasPhotoInput) hasPhotoInput.value = "Não";
+          if (photoFileInput) photoFileInput.value = "";
+          if (photoPreview) photoPreview.classList.remove("is-visible");
+        }
+      }
+
+      function buildCurrentOrderObject() {
+        if (!currentModel) return null;
+
+        const quantity = getSelectedQuantity();
+        const unitPrice = getBaseUnitPrice();
+        const subtotal = getSelectedSubtotal();
+        const deliveryFee = getDeliveryFee();
+        const discount = getCouponDiscount(subtotal);
+        const commission = getSellerCommission(quantity);
+        const tag = getModelTag(currentModel.id);
+
+        return {
+          uid: Date.now() + "-" + Math.random().toString(16).slice(2),
+          modelId: currentModel.id,
+          code: currentModel.code,
+          title: currentModel.title,
+          image: currentModel.images[0],
+          quantity: quantity,
+          unitPrice: unitPrice,
+          subtotal: Math.max(0, subtotal - discount) + deliveryFee,
+          subtotalLabel: deliveryRequiresConsultation ? formatBRL(Math.max(0, subtotal - discount)) + " + entrega a consultar" : formatBRL(Math.max(0, subtotal - discount) + deliveryFee),
+          productSubtotal: subtotal,
+          discount: discount,
+          couponCode: getCouponLabel(),
+          commission: commission,
+          deliveryRequiresConsultation: deliveryRequiresConsultation,
+          deliveryFee: deliveryFee,
+          deliveryCep: deliveryCepInput ? deliveryCepInput.value.trim() : "",
+          sellerBenefit: validatedSeller && validatedSeller.freeShipping ? "Sim" : (sellerBenefitInput ? sellerBenefitInput.value : "Não"),
+          sellerCode: validatedSeller ? validatedSeller.code : normalizeSellerCode(sellerCodeInput ? sellerCodeInput.value : ""),
+          sellerValidated: validatedSeller ? "Sim" : "Não",
+          deliveryDistanceKm: calculatedDeliveryDistanceKm,
+          deliveryCity: lastDeliveryCity,
+          deliveryState: lastDeliveryState,
+          packageName: getCompositionSummary(),
+          crochetQty: getCrochetQty(),
+          chocolateQty: getChocolateQty(),
+          urgency: urgencyInput ? urgencyInput.value : "Normal",
+          deliveryType: deliveryTypeInput ? deliveryTypeInput.value : "Retirar no local",
+          hasName: hasNameInput ? hasNameInput.value : "Não",
+          mugName: mugNameInput ? mugNameInput.value.trim() : "",
+          acceptsPhoto: tag.hasPhoto === "sim",
+          needsPhoto: hasPhotoInput ? hasPhotoInput.value : "Não",
+          photoName: getSelectedPhotoName(),
+          photoFile: photoFileInput && photoFileInput.files && photoFileInput.files[0] ? photoFileInput.files[0] : null,
+          paymentMethod: paymentMethodInput ? paymentMethodInput.value : "Pix",
+          paymentStatus: paymentStatusInput ? paymentStatusInput.value : "Aguardando pagamento",
+          paymentNote: paymentNoteInput ? paymentNoteInput.value.trim() : "",
+          customerEmail: customerEmailInput ? customerEmailInput.value.trim() : "",
+          notes: orderNotesInput ? orderNotesInput.value.trim() : "",
+          summary: getOrderSummary()
+        };
+      }
+
+      function addCurrentOrderToCart() {
+        if (!validateOrderBeforeWhatsapp()) return;
+
+        const item = buildCurrentOrderObject();
+        if (!item) return;
+
+        orderCart.push(item);
+        renderCart();
+        cartPanel.classList.add("is-open");
+
+        pendingBumpItemUid = item.uid;
+        showToast(item.title + " adicionado ao carrinho.");
+        addToCartBtn.textContent = "Adicionado ao carrinho";
+
+        setTimeout(function () {
+          addToCartBtn.textContent = "Inserir no carrinho";
+          closeModal();
+          openOrderBump(item.uid);
+        }, 650);
+      }
+
+      function renderCart() {
+        const count = orderCart.reduce(function (sum, item) {
+          return sum + item.quantity;
+        }, 0);
+
+        const total = orderCart.reduce(function (sum, item) {
+          return sum + item.subtotal;
+        }, 0);
+
+        const hasDeliveryConsult = orderCart.some(function (item) {
+          return item.deliveryRequiresConsultation;
+        });
+
+        if (cartCount) cartCount.textContent = count;
+        if (cartTotal) cartTotal.textContent = hasDeliveryConsult ? formatBRL(total) + " + entrega" : formatBRL(total);
+
+        if (!orderCart.length) {
+          cartList.innerHTML = '<div class="cc-cart-empty">Nenhum modelo adicionado ainda.</div>';
+          return;
+        }
+
+        cartList.innerHTML = orderCart.map(function (item, index) {
+          return `
+            <div class="cc-cart-item">
+              <img src="${item.image}" alt="${item.title}">
+              <div>
+                <strong>${item.title}</strong>
+                <span>${item.quantity} caneca(s) • ${item.subtotalLabel || formatBRL(item.subtotal)} • ${item.packageName}</span>
+              </div>
+              <button class="cc-cart-remove" type="button" data-cart-index="${index}">×</button>
+            </div>
+          `;
+        }).join("");
+      }
+
+      function getCartSummary() {
+        const seller = sellerNameInput ? sellerNameInput.value.trim() : "";
+        const sellerCode = validatedSeller ? validatedSeller.code : normalizeSellerCode(sellerCodeInput ? sellerCodeInput.value : "");
+        const sellerValidated = validatedSeller ? "Sim" : "Não";
+        const customer = customerNameInput ? customerNameInput.value.trim() : "";
+        const customerPhone = customerPhoneInput ? customerPhoneInput.value.trim() : "";
+        const deliveryDate = deliveryDateInput ? deliveryDateInput.value : "";
+        const total = orderCart.reduce(function (sum, item) {
+          return sum + item.subtotal;
+        }, 0);
+
+        const lines = [
+          "PEDIDO COMPLETO - STUDIO CAFÉ CANECA",
+          "",
+          `Vendedor: ${seller || "Não informado"}`,
+          `Cliente: ${customer || "Não informado"}`,
+          `WhatsApp do cliente: ${customerPhone || "Não informado"}`,
+          `Data de entrega: ${deliveryDate || "Não informada"}`,
+          "",
+          "ITENS DO PEDIDO:"
+        ];
+
+        orderCart.forEach(function (item, index) {
+          lines.push("");
+          lines.push(`${index + 1}. ${item.title}`);
+          lines.push(`Quantidade de canecas: ${item.quantity}`);
+          lines.push(`Composição: ${item.packageName}`);
+          lines.push(`Canecas com suporte em crochê: ${item.crochetQty || 0}`);
+          lines.push(`Canecas com chocolates Sonho de Valsa: ${item.chocolateQty || 0}`);
+          lines.push(`Valor da caneca: ${formatBRL(item.unitPrice)}`);
+          lines.push(`Subtotal produtos: ${formatBRL(item.productSubtotal || item.subtotal)}`);
+          lines.push(`Cupom: ${item.couponCode || "Nenhum"}`);
+          lines.push(`Desconto: ${formatBRL(item.discount || 0)}`);
+          lines.push(`Total do item: ${item.subtotalLabel || formatBRL(item.subtotal)}`);
+          lines.push(`Comissão prevista: ${formatBRL(item.commission || 0)}`);
+          lines.push(`Urgência: ${item.urgency}`);
+          lines.push(`Entrega/retirada: ${item.deliveryType}`);
+          if (item.deliveryType === "Entrega") {
+            lines.push(`CEP de entrega: ${item.deliveryCep || "Não informado"}`);
+            lines.push(`Benefício vendedor/parceiro: ${item.sellerBenefit || "Não"}`);
+            if (item.deliveryDistanceKm !== null && item.deliveryDistanceKm !== undefined) {
+              lines.push(`Distância aproximada: ${Number(item.deliveryDistanceKm).toFixed(1).replace(".", ",")} km`);
+            }
+            lines.push(`Cidade entrega: ${item.deliveryCity || "Não consultada"} / ${item.deliveryState || ""}`);
+            lines.push(`Consultar entrega/envio fora da região: ${item.deliveryRequiresConsultation ? "Sim" : "Não"}`);
+            lines.push(item.deliveryRequiresConsultation ? "Taxa de entrega: consultar" : `Taxa de entrega: ${formatBRL(item.deliveryFee || 0)}`);
+          }
+          lines.push(`Vai com nome?: ${item.hasName}`);
+          lines.push(`Nome na caneca: ${item.mugName || "Não informado"}`);
+
+          if (item.acceptsPhoto) {
+            lines.push(`Precisa foto?: ${item.needsPhoto}`);
+            lines.push(`Foto selecionada: ${item.photoName || "Nenhuma foto selecionada"}`);
+          } else {
+            lines.push("Foto: este modelo não possui campo de foto");
+          }
+
+          lines.push(`Forma de pagamento preferida: ${item.paymentMethod || "Pix"}`);
+          lines.push(`Status do pagamento: ${item.paymentStatus || "Aguardando pagamento"}`);
+          lines.push(`Observação de pagamento: ${item.paymentNote || "Sem observações de pagamento"}`);
+          lines.push(`Observações: ${item.notes || "Sem observações"}`);
+        });
+
+        lines.push("");
+        lines.push(`TOTAL DO PEDIDO: ${hasDeliveryConsult ? formatBRL(total) + " + entrega a consultar" : formatBRL(total)}`);
+        lines.push(`COMISSÃO TOTAL PREVISTA: ${formatBRL(totalCommission)}`);
+        lines.push("");
+        lines.push("Observação sobre entrega: retirada no local é grátis. Para Camboriú e Balneário Camboriú/SC, a taxa fica entre R$ 5 e R$ 10 conforme distância/bairro. Vendedores/parceiros têm frete grátis.");
+
+        return lines.join("\n");
+      }
+      function openOrderBump(itemUid) {
+        pendingBumpItemUid = itemUid;
+        bumpSelectedChocolate = false;
+        bumpSelectedCrochet = false;
+
+        if (bumpChocolate) bumpChocolate.classList.remove("is-selected");
+        if (bumpCrochet) bumpCrochet.classList.remove("is-selected");
+
+        if (bumpOverlay) {
+          bumpOverlay.classList.add("is-open");
+          bumpOverlay.setAttribute("aria-hidden", "false");
+        }
+      }
+
+      function closeOrderBump() {
+        if (bumpOverlay) {
+          bumpOverlay.classList.remove("is-open");
+          bumpOverlay.setAttribute("aria-hidden", "true");
+        }
+
+        pendingBumpItemUid = null;
+      }
+
+      function toggleBumpCard(type) {
+        if (type === "chocolate") {
+          bumpSelectedChocolate = !bumpSelectedChocolate;
+          if (bumpChocolate) bumpChocolate.classList.toggle("is-selected", bumpSelectedChocolate);
+        }
+
+        if (type === "crochet") {
+          bumpSelectedCrochet = !bumpSelectedCrochet;
+          if (bumpCrochet) bumpCrochet.classList.toggle("is-selected", bumpSelectedCrochet);
+        }
+      }
+
+      function applyOrderBump() {
+        const item = orderCart.find(function (cartItem) {
+          return cartItem.uid === pendingBumpItemUid;
+        });
+
+        if (!item) {
+          closeOrderBump();
+          return;
+        }
+
+        if (bumpSelectedChocolate) {
+          item.chocolateQty = item.quantity;
+        }
+
+        if (bumpSelectedCrochet) {
+          item.crochetQty = item.quantity;
+        }
+
+        item.subtotal = (item.quantity * 30) + ((item.crochetQty || 0) * 6) + ((item.chocolateQty || 0) * 6);
+
+        const parts = [`${item.quantity} caneca(s) personalizada(s)`];
+
+        if ((item.crochetQty || 0) > 0) {
+          parts.push(`${item.crochetQty} com suporte premium em crochê`);
+        }
+
+        if ((item.chocolateQty || 0) > 0) {
+          parts.push(`${item.chocolateQty} com chocolates Sonho de Valsa`);
+        }
+
+        item.packageName = parts.join(" + ");
+
+        renderCart();
+        showToast("Adicionais aplicados ao item.");
+        closeOrderBump();
+        if (cartPanel) cartPanel.classList.add("is-open");
+      }
+
+      function buildCartFormData() {
+        const formData = new FormData();
+        const orderId = "CCN-CARRINHO-" + new Date().toISOString().replace(/[-:.TZ]/g, "").slice(0, 14);
+        const total = orderCart.reduce(function (sum, item) {
+          return sum + item.subtotal;
+        }, 0);
+
+        formData.append("pedido_id", orderId);
+        formData.append("origem", "Carrinho Catálogo Dia dos Namorados");
+        formData.append("colecao", "Dia dos Namorados");
+        formData.append("tipo_pedido", "carrinho");
+        formData.append("vendedor", sellerNameInput ? sellerNameInput.value.trim() : "");
+        formData.append("cliente", customerNameInput ? customerNameInput.value.trim() : "");
+        formData.append("whatsapp_cliente", customerPhoneInput ? customerPhoneInput.value.trim() : "");
+        formData.append("data_entrega", deliveryDateInput ? deliveryDateInput.value : "");
+        formData.append("quantidade_itens", String(orderCart.length));
+        formData.append("total", hasDeliveryConsult ? "consultar_entrega" : String(total));
+        formData.append("total_formatado", hasDeliveryConsult ? formatBRL(total) + " + entrega a consultar" : formatBRL(total));
+        formData.append("entrega_requer_consulta", hasDeliveryConsult ? "Sim" : "Não");
+        formData.append("comissao_total_vendedor", String(totalCommission));
+        formData.append("comissao_total_vendedor_formatada", formatBRL(totalCommission));
+        formData.append("status_pagamento", "Aguardando pagamento");
+        formData.append("pagamento_online", "manual_recargapay_ou_pix");
+        formData.append("resumo_pedido", getCartSummary());
+        formData.append("itens_json", JSON.stringify(orderCart.map(function (item) {
+          return {
+            modelo: item.title,
+            codigo: item.code,
+            quantidade: item.quantity,
+            composicao: item.packageName,
+            suporte_croche: item.crochetQty || 0,
+            chocolates: item.chocolateQty || 0,
+            valor_caneca: item.unitPrice,
+            subtotal_produtos: item.productSubtotal || item.subtotal,
+            cupom: item.couponCode || "",
+            desconto: item.discount || 0,
+            taxa_entrega: item.deliveryRequiresConsultation ? "consultar" : (item.deliveryFee || 0),
+            entrega_requer_consulta: item.deliveryRequiresConsultation ? "Sim" : "Não",
+            total_item: item.subtotalLabel || item.subtotal,
+            comissao_vendedor: item.commission || 0,
+            cep_entrega: item.deliveryCep || "",
+            beneficio_vendedor: item.sellerBenefit || "Não",
+            distancia_entrega_km: item.deliveryDistanceKm,
+            urgencia: item.urgency,
+            entrega_retirada: item.deliveryType,
+            vai_com_nome: item.hasName,
+            nome_na_caneca: item.mugName,
+            aceita_foto: item.acceptsPhoto,
+            precisa_foto: item.needsPhoto,
+            foto_nome: item.photoName,
+            forma_pagamento: item.paymentMethod || "Pix",
+            status_pagamento: item.paymentStatus || "Aguardando pagamento",
+            observacao_pagamento: item.paymentNote || "",
+            observacoes: item.notes
+          };
+        })));
+
+        orderCart.forEach(function (item, index) {
+          if (item.photoFile) {
+            formData.append("foto_cliente_" + (index + 1), item.photoFile, item.photoFile.name);
+          }
+        });
+
+        return formData;
+      }
+
+      async function submitCartByEmail() {
+        if (!orderCart.length) {
+          showToast("Adicione pelo menos um modelo ao carrinho.");
+          return;
+        }
+
+        if (!customerNameInput.value.trim() || !customerEmailInput.value.trim() || !deliveryDateInput.value) {
+          showToast("Preencha cliente, e-mail do cliente e data de entrega antes de enviar.");
+          return;
+        }
+
+        cartEmailBtn.classList.add("is-loading");
+        cartEmailBtn.textContent = "Enviando carrinho...";
+
+        try {
+          await fetch(ORDER_WEBHOOK_URL, {
+            method: "POST",
+            mode: "no-cors",
+            body: buildCartFormData()
+          });
+
+          showToast("Carrinho enviado por e-mail com sucesso.");
+          cartEmailBtn.textContent = "Carrinho enviado";
+
+          setTimeout(function () {
+            cartEmailBtn.textContent = "Enviar carrinho por e-mail";
+            cartEmailBtn.classList.remove("is-loading");
+          }, 1600);
+
+        } catch (error) {
+          console.error(error);
+          showToast("Não foi possível confirmar o envio. Verifique o n8n e baixe o PDF do carrinho.");
+          cartEmailBtn.textContent = "Enviar carrinho por e-mail";
+          cartEmailBtn.classList.remove("is-loading");
+        }
+      }
+
+      function downloadCartPdf() {
+        if (!orderCart.length) {
+          alert("Adicione pelo menos um modelo ao carrinho.");
+          return;
+        }
+
+        downloadPdfFromText("pedido-carrinho-cafe-caneca.pdf", "Pedido Studio Café Caneca", getCartSummary());
+      }
+
+      grid.addEventListener("click", function (event) {
+        const button = event.target.closest("[data-model-id]");
+        if (!button) return;
+
+        openModal(button.getAttribute("data-model-id"));
+      });
+
+      searchInput.addEventListener("input", function () {
+        updateSubtotal();
+      renderCart();
+      renderGallery(true);
+      });
+
+      sortSelect.addEventListener("change", function () {
+        renderGallery(true);
+      });
+
+      loadMoreBtn.addEventListener("click", function () {
+        visibleCount += LOAD_STEP;
+        renderGallery(false);
+      });
+
+      modalClose.addEventListener("click", closeModal);
+
+      modal.addEventListener("click", function (event) {
+        if (event.target === modal) {
+          closeModal();
+        }
+      });
+
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape" && modal.classList.contains("is-open")) {
+          closeModal();
+        }
+      });
+
+      copyCodeBtn.addEventListener("click", copyCurrentCode);
+
+      if (addToCartBtn) addToCartBtn.addEventListener("click", addCurrentOrderToCart);
+
+      if (cartToggle) {
+        cartToggle.addEventListener("click", function () {
+          cartPanel.classList.toggle("is-open");
+        });
+      }
+
+      if (cartList) {
+        cartList.addEventListener("click", function (event) {
+          const btn = event.target.closest("[data-cart-index]");
+          if (!btn) return;
+
+          const index = Number(btn.getAttribute("data-cart-index"));
+          orderCart.splice(index, 1);
+          renderCart();
+          showToast("Item removido do carrinho.");
+        });
+      }
+      if (cartPdfBtn) cartPdfBtn.addEventListener("click", downloadCartPdf);
+      if (cartEmailBtn) cartEmailBtn.addEventListener("click", submitCartByEmail);
+      if (validateSellerBtn) validateSellerBtn.addEventListener("click", validateSellerCode);
+      if (sellerCodeInput) {
+        sellerCodeInput.addEventListener("input", clearSellerValidationIfCodeChanged);
+        sellerCodeInput.addEventListener("keydown", function (event) {
+          if (event.key === "Enter") {
+            event.preventDefault();
+            validateSellerCode();
+          }
+        });
+      }
+      if (applyCouponBtn) applyCouponBtn.addEventListener("click", applyCouponCode);
+      if (couponCodeInput) {
+        couponCodeInput.addEventListener("keydown", function (event) {
+          if (event.key === "Enter") {
+            event.preventDefault();
+            applyCouponCode();
+          }
+        });
+      }
+      if (calculateDeliveryBtn) calculateDeliveryBtn.addEventListener("click", calculateDeliveryByCep);
+      if (deliveryCepInput) {
+        deliveryCepInput.addEventListener("input", function () {
+          deliveryCepInput.value = formatCep(deliveryCepInput.value);
+          const digits = onlyDigits(deliveryCepInput.value);
+
+          if (digits.length !== 8) {
+            deliveryRequiresConsultation = false;
+            setDeliveryFeeValue(0);
+            updateSubtotal();
+            return;
+          }
+
+          clearTimeout(deliveryCepInput._timer);
+          deliveryCepInput._timer = setTimeout(calculateDeliveryByCep, 450);
+        });
+      }
+      if (deliveryTypeInput) deliveryTypeInput.addEventListener("change", updateDeliveryVisibility);
+      if (sellerBenefitInput) sellerBenefitInput.addEventListener("change", updateDeliveryVisibility);
+      if (deliveryFeeManualInput) deliveryFeeManualInput.addEventListener("change", updateSubtotal);
+
+      if (bumpChocolate) bumpChocolate.addEventListener("click", function () { toggleBumpCard("chocolate"); });
+      if (bumpCrochet) bumpCrochet.addEventListener("click", function () { toggleBumpCard("crochet"); });
+      if (bumpApply) bumpApply.addEventListener("click", applyOrderBump);
+      if (bumpSkip) bumpSkip.addEventListener("click", function () {
+        showToast("Item mantido sem adicionais extras.");
+        closeOrderBump();
+      });
+      if (bumpClose) bumpClose.addEventListener("click", closeOrderBump);
+      if (bumpOverlay) {
+        bumpOverlay.addEventListener("click", function (event) {
+          if (event.target === bumpOverlay) closeOrderBump();
+        });
+      }
+
+      [filterPhoto, filterShape, filterColor, filterAudience].forEach(function (field) {
+        if (!field) return;
+        field.addEventListener("change", function () {
+          renderGallery(true);
+        });
+      });
+
+      if (clearFiltersBtn) {
+        clearFiltersBtn.addEventListener("click", function () {
+          if (filterPhoto) filterPhoto.value = "";
+          if (filterShape) filterShape.value = "";
+          if (filterColor) filterColor.value = "";
+          if (filterAudience) filterAudience.value = "";
+          if (searchInput) searchInput.value = "";
+          renderGallery(true);
+        });
+      }
+
+      [
+        sellerNameInput,
+        customerNameInput,
+        customerPhoneInput,
+        deliveryDateInput,
+        hasNameInput,
+        mugNameInput,
+        hasPhotoInput,
+        paymentMethodInput,
+        paymentStatusInput,
+        paymentNoteInput,
+        orderNotesInput,
+        quantityInput,
+        urgencyInput,
+        deliveryTypeInput,
+        deliveryCepInput,
+        sellerBenefitInput,
+        deliveryFeeManualInput,
+        crochetQtyInput,
+        chocolateQtyInput
+      ].forEach(function (field) {
+        if (!field) return;
+        field.addEventListener("input", function () {
+          updateSubtotal();
+          updateWhatsappLink();
+        });
+        field.addEventListener("change", function () {
+          updateSubtotal();
+          updateWhatsappLink();
+        });
+      });
+
+      if (photoFileInput) {
+        photoFileInput.addEventListener("change", function () {
+          const file = photoFileInput.files && photoFileInput.files[0] ? photoFileInput.files[0] : null;
+
+          if (!file) {
+            photoPreview.classList.remove("is-visible");
+            updateWhatsappLink();
+            return;
+          }
+
+          photoFileName.textContent = file.name;
+
+          const reader = new FileReader();
+          reader.onload = function (event) {
+            photoPreviewImg.src = event.target.result;
+            photoPreview.classList.add("is-visible");
+          };
+          reader.readAsDataURL(file);
+
+          if (hasPhotoInput) {
+            hasPhotoInput.value = "Sim";
+          }
+
+          updateWhatsappLink();
+        });
+      }
+
+      if (submitOrderBtn) {
+        submitOrderBtn.addEventListener("click", submitOrderByEmail);
+      }
+
+      if (whatsappLink) {
+        whatsappLink.addEventListener("click", function (event) {
+          updateWhatsappLink();
+
+          if (!validateOrderBeforeWhatsapp()) {
+            event.preventDefault();
+          }
+        });
+      }
+
+      renderGallery(true);
+    })();
+  </script>
+</section>
+
+</body>
+</html>
